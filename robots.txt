@@ -1,0 +1,5 @@
+# robots.txt for https://aahmads.github.io/
+User-agent: *
+Allow: /
+
+Sitemap: https://aahmads.github.io/sitemap.xml
