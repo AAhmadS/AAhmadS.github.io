@@ -1,11 +1,18 @@
 import Link from 'next/link';
+import { SiGithub, SiGooglescholar, SiTelegram } from 'react-icons/si';
+import { FiMail } from 'react-icons/fi';
+import { FaLinkedinIn } from 'react-icons/fa';
 
 const socials = [
-  { label: 'GitHub', href: 'https://github.com/AAhmadS', text: 'GH' },
-  { label: 'Google Scholar', href: 'https://scholar.google.com/citations?user=bmO8gCYAAAAJ&hl=en', text: 'SC' },
-  { label: 'Email', href: 'mailto:shafieeamirahmadii@gmail.com', text: 'EM' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/amirahmad-shafiee', text: 'LI' },
-  { label: 'Telegram', href: 'https://t.me/notamira', text: 'TG' },
+  { label: 'GitHub', href: 'https://github.com/AAhmadS', Icon: SiGithub },
+  {
+    label: 'Google Scholar',
+    href: 'https://scholar.google.com/citations?user=bmO8gCYAAAAJ&hl=en',
+    Icon: SiGooglescholar,
+  },
+  { label: 'Email', href: 'mailto:shafieeamirahmadii@gmail.com', Icon: FiMail },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/amirahmad-shafiee', Icon: FaLinkedinIn },
+  { label: 'Telegram', href: 'https://t.me/notamira', Icon: SiTelegram },
 ];
 
 export function Footer() {
@@ -18,21 +25,22 @@ export function Footer() {
             Built with <span className="gradient-text">♥</span> by Amirahmad Shafiee
           </p>
           <div className="flex gap-2.5">
-            {socials.map((s) => (
+            {socials.map(({ label, href, Icon }) => (
               <Link
-                key={s.label}
-                href={s.href}
-                target={s.href.startsWith('http') ? '_blank' : undefined}
+                key={label}
+                href={href}
+                target={href.startsWith('http') ? '_blank' : undefined}
                 rel="noopener noreferrer"
-                aria-label={s.label}
-                className="flex h-9 w-9 items-center justify-center rounded-lg border text-sm transition-all hover:-translate-y-px"
+                aria-label={label}
+                title={label}
+                className="flex h-9 w-9 items-center justify-center rounded-lg border text-base transition-all hover:-translate-y-px"
                 style={{
                   background: 'var(--surface)',
                   borderColor: 'var(--surface-border)',
                   color: 'var(--text-secondary)',
                 }}
               >
-                {s.text}
+                <Icon />
               </Link>
             ))}
           </div>

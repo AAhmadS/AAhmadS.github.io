@@ -177,20 +177,6 @@ export const projects: Project[] = [
     kind: 'venture',
     status: 'In development',
   },
-  {
-    slug: 'ortos',
-    title: 'OrTOS — AI Hiring Marketplace',
-    badge: 'Venture',
-    summary:
-      'Two-sided hiring marketplace (Vue 3 + FastAPI + LangGraph/Mistral): Talent-Twin and Hiring-Agent over five spaces, RTL Persian-first. Pre-seed prototype.',
-    description:
-      'Two-sided marketplace matching talent with teams: a Talent-Twin and a Hiring-Agent (LangGraph on Mistral-large) over five marketplace spaces, Persian-first RTL UI (Vue 3 + Pinia), async FastAPI backend with Postgres/Redis/Elastic. Mock-first pre-seed build; the resume-builder slice (FastAPI + Next.js + Kotlin Compose) is the most complete part.',
-    tech: ['Vue 3', 'FastAPI', 'LangGraph', 'Postgres'],
-    links: [],
-    year: '2025–2026',
-    kind: 'venture',
-    status: 'Pre-seed prototype',
-  },
 ];
 
 export function getProject(slug: string): Project | undefined {

@@ -3,6 +3,21 @@ import { projects } from '@/content/projects';
 import { papers } from '@/content/research';
 import { domains } from '@/content/domains';
 import { regrets } from '@/content/regrets';
+import { SiGithub, SiGooglescholar, SiTelegram } from 'react-icons/si';
+import { FiMail } from 'react-icons/fi';
+import { FaLinkedinIn } from 'react-icons/fa';
+
+const socials = [
+  { label: 'GitHub', href: 'https://github.com/AAhmadS', Icon: SiGithub },
+  {
+    label: 'Scholar',
+    href: 'https://scholar.google.com/citations?user=bmO8gCYAAAAJ&hl=en',
+    Icon: SiGooglescholar,
+  },
+  { label: 'Email', href: 'mailto:shafieeamirahmadii@gmail.com', Icon: FiMail },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/amirahmad-shafiee', Icon: FaLinkedinIn },
+  { label: 'Telegram', href: 'https://t.me/notamira', Icon: SiTelegram },
+];
 
 const roles = [
   'AI Researcher & Builder',
@@ -76,27 +91,22 @@ export default function HomePage() {
             </div>
             <div className="my-5 h-px" style={{ background: 'var(--surface-border)' }} />
             <div className="flex justify-center gap-3">
-              {[
-                ['GitHub', 'https://github.com/AAhmadS'],
-                ['Scholar', 'https://scholar.google.com/citations?user=bmO8gCYAAAAJ&hl=en'],
-                ['Email', 'mailto:shafieeamirahmadii@gmail.com'],
-                ['LinkedIn', 'https://www.linkedin.com/in/amirahmad-shafiee'],
-                ['Telegram', 'https://t.me/notamira'],
-              ].map(([label, href]) => (
+              {socials.map(({ label, href, Icon }) => (
                 <a
                   key={label}
                   href={href}
                   target={href.startsWith('http') ? '_blank' : undefined}
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg border text-xs transition-all hover:-translate-y-0.5"
+                  title={label}
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border text-base transition-all hover:-translate-y-0.5"
                   style={{
                     background: 'var(--surface)',
                     borderColor: 'var(--surface-border)',
                     color: 'var(--text-secondary)',
                   }}
                 >
-                  {label.slice(0, 2).toUpperCase()}
+                  <Icon />
                 </a>
               ))}
             </div>

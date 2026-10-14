@@ -1,6 +1,7 @@
 import { PageHeader } from '@/components/PageHeader';
 import type { Metadata } from 'next';
 import { nowItems, beforeItems } from '@/content/experience';
+import { FiCpu, FiMessageSquare, FiCode, FiTool } from 'react-icons/fi';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -12,22 +13,22 @@ export const metadata: Metadata = {
 const skills = [
   {
     title: 'Machine Learning',
-    icon: '🧠',
+    Icon: FiCpu,
     items: ['Deep Learning', 'Reinforcement Learning', 'Computer Vision', 'PyTorch', 'TensorFlow'],
   },
   {
     title: 'NLP & AI',
-    icon: '💬',
+    Icon: FiMessageSquare,
     items: ['Natural Language Processing', 'Conversational AI', 'Transformers', 'BERT', 'LLMs'],
   },
   {
     title: 'Programming',
-    icon: '💻',
+    Icon: FiCode,
     items: ['Python', 'JavaScript', 'Java', 'C++', 'SQL'],
   },
   {
     title: 'Tools & Frameworks',
-    icon: '🛠️',
+    Icon: FiTool,
     items: ['Git', 'Docker', 'Jupyter', 'Linux', 'AWS'],
   },
 ];
@@ -86,7 +87,7 @@ export default function AboutPage() {
             </div>
             <h3 className="mt-2 font-display text-lg font-bold">Sharif University of Technology</h3>
             <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
-              Admitted to Industrial Engineering (Konkur rank 95 of 50,000+, top 0.2%), transferred to Computer
+              Admitted to Industrial Engineering, transferred to Computer
               Science. GPA 17.38/20 over 134 units — above department (16.86) and university (16.17) averages.
               B.Sc. project 20/20; graduate-level NLP 19.3/20.
             </p>
@@ -111,7 +112,7 @@ export default function AboutPage() {
                 className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg text-xl text-white"
                 style={{ background: 'linear-gradient(135deg,#6366f1,#8b5cf6)' }}
               >
-                {s.icon}
+                <s.Icon />
               </div>
               <h3 className="font-display font-bold">{s.title}</h3>
               <div className="mt-3 flex flex-wrap gap-1.5">

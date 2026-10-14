@@ -2,12 +2,14 @@
 
 import { useState } from 'react';
 import { PageHeader } from '@/components/PageHeader';
+import { FiMail, FiMapPin, FiBookOpen } from 'react-icons/fi';
+import { SiGooglescholar } from 'react-icons/si';
 
 const contactItems = [
-  { label: 'Email', value: 'shafieeamirahmadii@gmail.com', href: 'mailto:shafieeamirahmadii@gmail.com' },
-  { label: 'Location', value: 'Tehran, Iran' },
-  { label: 'Institution', value: 'Sharif University of Technology' },
-  { label: 'Research Profile', value: 'Google Scholar', href: 'https://scholar.google.com/citations?user=bmO8gCYAAAAJ&hl=en' },
+  { label: 'Email', value: 'shafieeamirahmadii@gmail.com', href: 'mailto:shafieeamirahmadii@gmail.com', Icon: FiMail },
+  { label: 'Location', value: 'Tehran, Iran', Icon: FiMapPin },
+  { label: 'Institution', value: 'Sharif University of Technology', Icon: FiBookOpen },
+  { label: 'Research Profile', value: 'Google Scholar', href: 'https://scholar.google.com/citations?user=bmO8gCYAAAAJ&hl=en', Icon: SiGooglescholar },
 ];
 
 export default function ContactPage() {
@@ -37,10 +39,10 @@ export default function ContactPage() {
           {contactItems.map((c) => (
             <div key={c.label} className="glass-card flex items-start gap-4 p-5">
               <div
-                className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-lg text-white"
+                className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-lg text-lg text-white"
                 style={{ background: 'linear-gradient(135deg,#6366f1,#8b5cf6)' }}
               >
-                {c.label.slice(0, 2).toUpperCase()}
+                <c.Icon />
               </div>
               <div>
                 <div className="font-mono text-xs uppercase tracking-wider" style={{ color: 'var(--text-tertiary)' }}>

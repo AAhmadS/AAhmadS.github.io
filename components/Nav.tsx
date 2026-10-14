@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { useTheme } from '@/lib/theme';
+import { FiMoon, FiSun } from 'react-icons/fi';
 
 const links = [
   { href: '/', label: 'Home' },
@@ -59,7 +60,7 @@ export function Nav() {
               color: 'var(--text-secondary)',
             }}
           >
-            {theme === 'dark' ? '🌙' : '☀️'}
+            {theme === 'dark' ? <FiMoon /> : <FiSun />}
           </button>
 
           <button
