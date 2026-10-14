@@ -35,8 +35,8 @@ function PaperCard({ p }: { p: (typeof papers)[number] }) {
 }
 
 export default function ResearchPage() {
-  const published = papers.filter((p) => p.venue === 'arXiv');
-  const ongoing = papers.filter((p) => p.venue !== 'arXiv');
+  const published = papers.filter((p) => p.venue !== 'In progress');
+  const ongoing = papers.filter((p) => p.venue === 'In progress');
   return (
     <div className="pb-24">
       <PageHeader

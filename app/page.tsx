@@ -119,7 +119,7 @@ export default function HomePage() {
               <div className="section-label">Research</div>
               <h3 className="mt-3 font-display text-xl font-bold">Publications</h3>
               <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
-                3 published papers + 4 in-progress studies across NLP, RL, and vision-language research.
+                {papers.filter((p) => p.venue !== 'In progress').length} published + {papers.filter((p) => p.venue === 'In progress').length} in-progress across NLP, RL, and vision-language research.
               </p>
             </Link>
             <Link href="/projects" className="glass-card p-7">

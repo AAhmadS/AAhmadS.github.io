@@ -8,6 +8,11 @@ Use this file as the source of truth for website edits. Non-perfectionist: ship 
 - Bilingual EN/FA focus (Persian NLP, RTL UX, Persian voice agents).
 - Contact: shafieeamirahmadii@gmail.com, github.com/AAhmadS, scholar user=bmO8gCYAAAAJ, linkedin amirahmad-shafiee, t.me/notamira.
 
+## Verified record (Scholar + CV + transcript, synced 2026-10-14)
+- Scholar: 23 citations, h-index 2, i10-index 1. 4 works: SDPERL 17 cites (equal contrib), Lightning→JRSS Series A 2026 (new title "Aligning incentives and resilience", equal contrib), Emo3D→Findings of NAACL 2025 pp.3158-3172, "From Illusion to Insight" arXiv:2512.23875 (2025).
+- CV 2025: interests NLP / Conversational Assistants / AI&Healthcare / Multimodal / Post-training+Eval / Open-domain dialogue. Konkur rank 95/50k (top 0.2%). X-Bliva medical VQA (Duke, Firouzi, under revision). LLM-eval project supervised by Aliannejadi (UvA). TA: ML, Automata ×2, Stats ×2. Intern Roshan-AI classical ML 2022-23. Union secretary 2022-23. TOEFL 113.
+- Transcript (issued Sep 2024): admitted Industrial Eng → CS. 134 units, GPA 17.38/20 (dept 16.86, univ 16.17). BSc project 20/20. Grad NLP 19.3. Regression 20.
+
 ## Explicit exclusions (user decision 2026-10-14)
 - DROP `iPrOp` — incomplete, never attended. Never list on site.
 - DROP `OpenCHA` — not mine (Institute4FutureHealth upstream). Never list on site.

@@ -78,6 +78,31 @@ export default function AboutPage() {
           </div>
         </div>
 
+        <h2 className="mt-12 font-display text-2xl font-bold">Education</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <div className="glass-card p-6">
+            <div className="font-mono text-xs uppercase tracking-wider" style={{ color: 'var(--brand-start)' }}>
+              2020 — present · B.Sc. Computer Science
+            </div>
+            <h3 className="mt-2 font-display text-lg font-bold">Sharif University of Technology</h3>
+            <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+              Admitted to Industrial Engineering (Konkur rank 95 of 50,000+, top 0.2%), transferred to Computer
+              Science. GPA 17.38/20 over 134 units — above department (16.86) and university (16.17) averages.
+              B.Sc. project 20/20; graduate-level NLP 19.3/20.
+            </p>
+          </div>
+          <div className="glass-card p-6">
+            <div className="font-mono text-xs uppercase tracking-wider" style={{ color: 'var(--brand-start)' }}>
+              Research impact · Google Scholar
+            </div>
+            <h3 className="mt-2 font-display text-lg font-bold">23 citations · h-index 2</h3>
+            <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+              4 listed works: SDPERL (17), Emo3D at NAACL 2025 Findings, Lightning Network at JRSS Series A 2026,
+              and the 2025 agentic defect-prediction preprint. Verified sharif.edu profile.
+            </p>
+          </div>
+        </div>
+
         <h2 className="mt-12 font-display text-2xl font-bold">Skills</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-4">
           {skills.map((s) => (

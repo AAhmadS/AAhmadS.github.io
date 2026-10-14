@@ -1,0 +1,72 @@
+- generic [active] [ref=f11e1]:
+  - banner [ref=f11e2]:
+    - generic [ref=f11e3]:
+      - link "Amirahmad Shafiee - Home" [ref=f11e4] [cursor=pointer]:
+        - /url: /
+        - text: AS
+      - navigation "Main navigation" [ref=f11e5]:
+        - link "Home" [ref=f11e6] [cursor=pointer]:
+          - /url: /
+        - link "About" [ref=f11e7] [cursor=pointer]:
+          - /url: /about/
+        - link "Research" [ref=f11e8] [cursor=pointer]:
+          - /url: /research/
+        - link "Projects" [ref=f11e9] [cursor=pointer]:
+          - /url: /projects/
+        - link "Domains" [ref=f11e10] [cursor=pointer]:
+          - /url: /domains/
+        - link "Regrets" [ref=f11e11] [cursor=pointer]:
+          - /url: /regrets/
+        - link "Contact" [ref=f11e12] [cursor=pointer]:
+          - /url: /contact/
+      - button "Toggle dark/light mode" [ref=f11e14] [cursor=pointer]: 🌙
+  - main [ref=f11e15]:
+    - generic [ref=f11e16]:
+      - generic [ref=f11e18]:
+        - text: // Regrets
+        - heading "Things I Regret" [level=1] [ref=f11e19]
+        - paragraph [ref=f11e20]: "Unfinished and mis-aimed projects I keep public on purpose: what I regret about each, the expertise hiding inside them, and the capabilities they left me — told as stories."
+      - generic [ref=f11e22]:
+        - 'link "LLaMA ClipViT — medical vision-language experiments 2024 Six SOTA models, one lesson: benchmark the clinical question, not the leaderboard. Read the story →" [ref=f11e23] [cursor=pointer]':
+          - /url: /regrets/llama-clipvit/
+          - generic [ref=f11e25]:
+            - heading "LLaMA ClipViT — medical vision-language experiments" [level=2] [ref=f11e26]
+            - generic [ref=f11e27]: "2024"
+          - paragraph [ref=f11e28]: "Six SOTA models, one lesson: benchmark the clinical question, not the leaderboard."
+          - generic [ref=f11e29]: Read the story →
+        - link "LLM-Evaluation — can LLMs judge? 2025 A wide judges × benchmarks matrix that taught me to validate one cell deeply first. Read the story →" [ref=f11e30] [cursor=pointer]:
+          - /url: /regrets/llm-evaluation/
+          - generic [ref=f11e32]:
+            - heading "LLM-Evaluation — can LLMs judge?" [level=2] [ref=f11e33]
+            - generic [ref=f11e34]: "2025"
+          - paragraph [ref=f11e35]: A wide judges × benchmarks matrix that taught me to validate one cell deeply first.
+          - generic [ref=f11e36]: Read the story →
+        - link "Persian-vs-English multimodal reasoning (Aya Expedition) 2025 — stalled The most important question I asked, and the project I left half-built. Read the story →" [ref=f11e37] [cursor=pointer]:
+          - /url: /regrets/persian-multimodal-reasoning/
+          - generic [ref=f11e39]:
+            - heading "Persian-vs-English multimodal reasoning (Aya Expedition)" [level=2] [ref=f11e40]
+            - generic [ref=f11e41]: 2025 — stalled
+          - paragraph [ref=f11e42]: The most important question I asked, and the project I left half-built.
+          - generic [ref=f11e43]: Read the story →
+  - contentinfo [ref=f11e44]:
+    - generic [ref=f11e45]:
+      - generic [ref=f11e46]:
+        - paragraph [ref=f11e47]: Built with ♥ by Amirahmad Shafiee
+        - generic [ref=f11e48]:
+          - link "GitHub" [ref=f11e49] [cursor=pointer]:
+            - /url: https://github.com/AAhmadS
+            - text: GH
+          - link "Google Scholar" [ref=f11e50] [cursor=pointer]:
+            - /url: https://scholar.google.com/citations?user=bmO8gCYAAAAJ&hl=en
+            - text: SC
+          - link "Email" [ref=f11e51] [cursor=pointer]:
+            - /url: mailto:shafieeamirahmadii@gmail.com
+            - text: EM
+          - link "LinkedIn" [ref=f11e52] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/amirahmad-shafiee
+            - text: LI
+          - link "Telegram" [ref=f11e53] [cursor=pointer]:
+            - /url: https://t.me/notamira
+            - text: TG
+      - paragraph [ref=f11e54]: © 2026 Amirahmad Shafiee. All rights reserved.
+  - alert [ref=f11e55]

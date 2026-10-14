@@ -20,9 +20,9 @@ export const projects: Project[] = [
     title: 'Foreign Word Detector',
     badge: 'NLP',
     summary:
-      'Sharif NLP coursework: detects foreign words embedded in text with classical ML on labelled linguistic data.',
+      'Sharif NLP coursework on Persian text: detects and translates non-Persian words embedded in Persian writing, with a unique corpus of Persian-written English words.',
     description:
-      'Built for the NLP course at Sharif University of Technology. A classical-ML pipeline trained on labelled linguistic data to spot foreign-word intrusions in running text — early work that led into my Persian/English language focus.',
+      'Built for the NLP course at Sharif (19.3/20). A classical-ML pipeline over Persian text that spots foreign-word intrusions and translates them — trained on a purpose-built corpus of Persian-written English words. Early work that led into my Persian/English language focus.',
     tech: ['Python', 'scikit-learn', 'Jupyter'],
     links: [
       { label: 'GitHub', href: 'https://github.com/AAhmadS/Foreign-word-detector' },
@@ -36,9 +36,9 @@ export const projects: Project[] = [
     title: 'Philosophical Text Classification',
     badge: 'NLP',
     summary:
-      'Classifies philosophical texts by school or author with transformer models and semantic analysis.',
+      'Trains BERT to attribute philosophical texts to Nietzsche, Kant, or Hegel — authorship classification on abstract long-form prose.',
     description:
-      'Coursework project applying transformer models to classify philosophical texts by school of thought and author — an early test of how far semantic representations carry on long, abstract Persian-adjacent and English prose.',
+      'Coursework project fine-tuning BERT to classify authors of philosophical texts across Nietzsche, Kant, and Hegel — an early test of how far semantic representations carry on long, abstract prose.',
     tech: ['Python', 'Transformers', 'Jupyter'],
     links: [
       { label: 'GitHub', href: 'https://github.com/AAhmadS/Philosophical-Text-Classification' },

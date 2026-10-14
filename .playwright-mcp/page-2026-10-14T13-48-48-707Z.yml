@@ -1,0 +1,105 @@
+- generic [active] [ref=f8e1]:
+  - banner [ref=f8e2]:
+    - generic [ref=f8e3]:
+      - link "Amirahmad Shafiee - Home" [ref=f8e4] [cursor=pointer]:
+        - /url: /
+        - text: AS
+      - navigation "Main navigation" [ref=f8e5]:
+        - link "Home" [ref=f8e6] [cursor=pointer]:
+          - /url: /
+        - link "About" [ref=f8e7] [cursor=pointer]:
+          - /url: /about/
+        - link "Research" [ref=f8e8] [cursor=pointer]:
+          - /url: /research/
+        - link "Projects" [ref=f8e9] [cursor=pointer]:
+          - /url: /projects/
+        - link "Domains" [ref=f8e10] [cursor=pointer]:
+          - /url: /domains/
+        - link "Regrets" [ref=f8e11] [cursor=pointer]:
+          - /url: /regrets/
+        - link "Contact" [ref=f8e12] [cursor=pointer]:
+          - /url: /contact/
+      - button "Toggle dark/light mode" [ref=f8e14] [cursor=pointer]: 🌙
+  - main [ref=f8e15]:
+    - generic [ref=f8e17]:
+      - generic [ref=f8e18]:
+        - paragraph [ref=f8e19]: // ai-researcher · sharif-university
+        - heading "Amirahmad Shafiee" [level=1] [ref=f8e20]: AmirahmadShafiee
+        - paragraph [ref=f8e21]: AI Researcher & Builder
+        - generic [ref=f8e22]:
+          - generic [ref=f8e23]: Persian NLP & Voice Agents
+          - generic [ref=f8e24]: Vision-Language Models
+          - generic [ref=f8e25]: Reinforcement Learning
+        - paragraph [ref=f8e26]: Sharif CS undergrad working where linguistics meets AI — 3 published papers, the live Kolbeh real-estate AI platform, Persian voice agents, and open tools I actually use.
+        - generic [ref=f8e27]:
+          - link "View Research" [ref=f8e28] [cursor=pointer]:
+            - /url: /research/
+          - link "Domains of Interest" [ref=f8e29] [cursor=pointer]:
+            - /url: /domains/
+      - generic [ref=f8e30]:
+        - img "Amirahmad Shafiee" [ref=f8e32]
+        - generic [ref=f8e33]: Amirahmad Shafiee
+        - generic [ref=f8e34]: AI Researcher
+        - generic [ref=f8e35]: Sharif University of Technology
+        - generic [ref=f8e37]:
+          - link "GitHub" [ref=f8e38] [cursor=pointer]:
+            - /url: https://github.com/AAhmadS
+            - text: GI
+          - link "Scholar" [ref=f8e39] [cursor=pointer]:
+            - /url: https://scholar.google.com/citations?user=bmO8gCYAAAAJ&hl=en
+            - text: SC
+          - link "Email" [ref=f8e40] [cursor=pointer]:
+            - /url: mailto:shafieeamirahmadii@gmail.com
+            - text: EM
+          - link "LinkedIn" [ref=f8e41] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/amirahmad-shafiee
+            - text: LI
+          - link "Telegram" [ref=f8e42] [cursor=pointer]:
+            - /url: https://t.me/notamira
+            - text: TE
+    - generic [ref=f8e44]:
+      - heading "Explore my work" [level=2] [ref=f8e45]
+      - paragraph [ref=f8e46]: Research, open-source projects, and the domains I study — with public discussion on my ideas and notes.
+      - generic [ref=f8e47]:
+        - link "Research Publications 3 published papers + 4 in-progress studies across NLP, RL, and vision-language research." [ref=f8e48] [cursor=pointer]:
+          - /url: /research/
+          - generic [ref=f8e49]: Research
+          - heading "Publications" [level=3] [ref=f8e50]
+          - paragraph [ref=f8e51]: 3 published papers + 4 in-progress studies across NLP, RL, and vision-language research.
+        - 'link "Ventures & Tools Projects 13 curated: Kolbeh platform, research implementations, and open tools." [ref=f8e52] [cursor=pointer]':
+          - /url: /projects/
+          - generic [ref=f8e53]: Ventures & Tools
+          - heading "Projects" [level=3] [ref=f8e54]
+          - paragraph [ref=f8e55]: "13 curated: Kolbeh platform, research implementations, and open tools."
+        - link "Knowledge Domains of Interest 4 domains with studied items, findings, notes, and ideas — plus public chat." [ref=f8e56] [cursor=pointer]:
+          - /url: /domains/
+          - generic [ref=f8e57]: Knowledge
+          - heading "Domains of Interest" [level=3] [ref=f8e58]
+          - paragraph [ref=f8e59]: 4 domains with studied items, findings, notes, and ideas — plus public chat.
+        - link "Honesty Regrets 3 unfinished projects, what each taught, and the capabilities they left." [ref=f8e60] [cursor=pointer]:
+          - /url: /regrets/
+          - generic [ref=f8e61]: Honesty
+          - heading "Regrets" [level=3] [ref=f8e62]
+          - paragraph [ref=f8e63]: 3 unfinished projects, what each taught, and the capabilities they left.
+  - contentinfo [ref=f8e64]:
+    - generic [ref=f8e65]:
+      - generic [ref=f8e66]:
+        - paragraph [ref=f8e67]: Built with ♥ by Amirahmad Shafiee
+        - generic [ref=f8e68]:
+          - link "GitHub" [ref=f8e69] [cursor=pointer]:
+            - /url: https://github.com/AAhmadS
+            - text: GH
+          - link "Google Scholar" [ref=f8e70] [cursor=pointer]:
+            - /url: https://scholar.google.com/citations?user=bmO8gCYAAAAJ&hl=en
+            - text: SC
+          - link "Email" [ref=f8e71] [cursor=pointer]:
+            - /url: mailto:shafieeamirahmadii@gmail.com
+            - text: EM
+          - link "LinkedIn" [ref=f8e72] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/amirahmad-shafiee
+            - text: LI
+          - link "Telegram" [ref=f8e73] [cursor=pointer]:
+            - /url: https://t.me/notamira
+            - text: TG
+      - paragraph [ref=f8e74]: © 2026 Amirahmad Shafiee. All rights reserved.
+  - alert [ref=f8e75]

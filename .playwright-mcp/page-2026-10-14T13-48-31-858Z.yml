@@ -1,0 +1,73 @@
+- generic [active] [ref=f6e1]:
+  - banner [ref=f6e2]:
+    - generic [ref=f6e3]:
+      - link "Amirahmad Shafiee - Home" [ref=f6e4] [cursor=pointer]:
+        - /url: /
+        - text: AS
+      - navigation "Main navigation" [ref=f6e5]:
+        - link "Home" [ref=f6e6] [cursor=pointer]:
+          - /url: /
+        - link "About" [ref=f6e7] [cursor=pointer]:
+          - /url: /about/
+        - link "Research" [ref=f6e8] [cursor=pointer]:
+          - /url: /research/
+        - link "Projects" [ref=f6e9] [cursor=pointer]:
+          - /url: /projects/
+        - link "Domains" [ref=f6e10] [cursor=pointer]:
+          - /url: /domains/
+        - link "Regrets" [ref=f6e11] [cursor=pointer]:
+          - /url: /regrets/
+        - link "Contact" [ref=f6e12] [cursor=pointer]:
+          - /url: /contact/
+      - button "Toggle dark/light mode" [ref=f6e14] [cursor=pointer]: 🌙
+  - main [ref=f6e15]:
+    - generic [ref=f6e17]:
+      - link "← All regrets" [ref=f6e18] [cursor=pointer]:
+        - /url: /regrets/
+      - generic [ref=f6e19]: "2024"
+      - heading "LLaMA ClipViT — medical vision-language experiments" [level=1] [ref=f6e20]
+      - paragraph [ref=f6e21]: "Six SOTA models, one lesson: benchmark the clinical question, not the leaderboard."
+      - generic [ref=f6e22]:
+        - generic [ref=f6e23]:
+          - generic [ref=f6e24]:
+            - paragraph [ref=f6e25]: I came into medical vision-language models the way a kid walks into a candy store. BLIVA, MedFlamingo, LLaVA-Med, MedVInT-TD, RadFM, CogVLM — every week a new state-of-the-art, and I wanted to run all of them on chest X-rays from the Indiana dataset, few-shot and fine-tuned, with TextGrad experiments on top. The harness worked. The benchmark table grew. And then I looked at the table and realized I could not tell you which result mattered for a single real clinical decision.
+            - paragraph [ref=f6e26]: "That stung, because the engineering was genuinely good: Hugging Face pipelines, clean few-shot protocols, aggregated SOTA comparisons. I had built a machine for producing numbers and forgotten to decide which number would change anyone’s mind. It was the mirror image of Emo3D, where inventing the right metric was the whole contribution — here I had six models and no metric of my own."
+            - paragraph [ref=f6e27]: "So this one sits in Regrets, not because it failed, but because it taught me the rule I now enforce everywhere: decide the question before running the model. My Option Lab has 179 tests because of ClipViT. My voice-agent benches measure farm-domain error rates because ClipViT taught me that embedding distance is not task performance."
+          - generic [ref=f6e28]:
+            - generic [ref=f6e29]: What I regret
+            - paragraph [ref=f6e30]: I chased breadth — six models, three protocols — instead of depth on one clinical question with one metric I believed in. Benchmark-chasing felt like progress and was not.
+        - generic [ref=f6e31]:
+          - generic [ref=f6e32]:
+            - heading "Capabilities gained" [level=2] [ref=f6e33]
+            - generic [ref=f6e34]:
+              - generic [ref=f6e35]: Medical VLM evaluation design (few-shot + fine-tune)
+              - generic [ref=f6e36]: Hugging Face ecosystem at scale
+              - generic [ref=f6e37]: Chest X-ray domain data handling
+              - generic [ref=f6e38]: TextGrad prompt optimization
+              - generic [ref=f6e39]: SOTA benchmark aggregation
+          - generic [ref=f6e40]:
+            - heading "Related" [level=2] [ref=f6e41]
+            - 'link "Project: LLaMA ClipViT" [ref=f6e43] [cursor=pointer]':
+              - /url: /projects/llama-clipvit/
+  - contentinfo [ref=f6e44]:
+    - generic [ref=f6e45]:
+      - generic [ref=f6e46]:
+        - paragraph [ref=f6e47]: Built with ♥ by Amirahmad Shafiee
+        - generic [ref=f6e48]:
+          - link "GitHub" [ref=f6e49] [cursor=pointer]:
+            - /url: https://github.com/AAhmadS
+            - text: GH
+          - link "Google Scholar" [ref=f6e50] [cursor=pointer]:
+            - /url: https://scholar.google.com/citations?user=bmO8gCYAAAAJ&hl=en
+            - text: SC
+          - link "Email" [ref=f6e51] [cursor=pointer]:
+            - /url: mailto:shafieeamirahmadii@gmail.com
+            - text: EM
+          - link "LinkedIn" [ref=f6e52] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/amirahmad-shafiee
+            - text: LI
+          - link "Telegram" [ref=f6e53] [cursor=pointer]:
+            - /url: https://t.me/notamira
+            - text: TG
+      - paragraph [ref=f6e54]: © 2026 Amirahmad Shafiee. All rights reserved.
+  - alert [ref=f6e55]

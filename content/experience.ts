@@ -52,6 +52,27 @@ export const beforeItems: ExperienceItem[] = [
       'Text-to-3D-face models with multilingual embeddings — the seed of the Emo3D paper.',
   },
   {
+    period: '2022–2023',
+    title: 'AI Intern — Classical Machine Learning',
+    org: 'Roshan-AI',
+    detail:
+      'Industry internship on classical ML, alongside the degree. Jul 2022–Oct 2023.',
+  },
+  {
+    period: '2024',
+    title: 'Teaching Assistant — ML, Automata (×2), Statistics (×2)',
+    org: 'Sharif University of Technology',
+    detail:
+      'TA for Machine Learning, Theory of Languages and Automata (twice), and Statistics and Applications (twice).',
+  },
+  {
+    period: '2022–2023',
+    title: 'Secretary, Mathematical Sciences Students’ Union',
+    org: 'Sharif University of Technology',
+    detail:
+      'Elected secretary of the department student union, Nov 2022–Jun 2023. Contributor, GNN study group (Prof. Sarbazi-Azad).',
+  },
+  {
     period: 'Ongoing',
     title: 'B.Sc. Computer Science',
     org: 'Sharif University of Technology',

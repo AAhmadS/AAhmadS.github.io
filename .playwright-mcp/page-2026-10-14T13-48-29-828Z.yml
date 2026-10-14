@@ -1,0 +1,139 @@
+- generic [ref=f4e2]:
+  - heading [level=1] [ref=f4e3]:
+    - link "Amirahmad Shafiee" [ref=f4e4] [cursor=pointer]:
+      - /url: https://aahmads.github.io/
+  - heading "Amirahmad Shafiee — Personal Site" [level=1] [ref=f4e5]
+  - paragraph [ref=f4e6]:
+    - text: Personal portfolio + knowledge site for Amirahmad Shafiee (AI Researcher & Computer Science Student at Sharif University of Technology), built with
+    - strong [ref=f4e7]: Next.js (App Router)
+    - text: ","
+    - strong [ref=f4e8]: TypeScript
+    - text: ","
+    - strong [ref=f4e9]: Tailwind CSS
+    - text: ", and"
+    - strong [ref=f4e10]: Supabase
+    - text: for public discussion.
+  - heading [level=2] [ref=f4e11]:
+    - text: Sections
+    - link "Anchor" [ref=f4e12] [cursor=pointer]:
+      - /url: "#sections"
+      - text: 
+  - list [ref=f4e13]:
+    - listitem [ref=f4e14]:
+      - strong [ref=f4e15]: Home
+      - text: — hero + overview
+    - listitem [ref=f4e16]:
+      - strong [ref=f4e17]: About
+      - text: — bio + skills
+    - listitem [ref=f4e18]:
+      - strong [ref=f4e19]: Research
+      - text: — publications list + per-paper pages
+    - listitem [ref=f4e20]:
+      - strong [ref=f4e21]: Projects
+      - text: — open-source work + per-project pages
+    - listitem [ref=f4e22]:
+      - strong [ref=f4e23]: Domains of Interest
+      - text: — a living knowledge map. Each domain contains what you’ve
+      - strong [ref=f4e24]: studied
+      - text: ; each study holds
+      - strong [ref=f4e25]: findings
+      - text: ","
+      - strong [ref=f4e26]: notes
+      - text: ","
+      - strong [ref=f4e27]: borrowings
+      - text: ", and"
+      - strong [ref=f4e28]: ideas
+      - text: ", each with a"
+      - strong [ref=f4e29]: public chat
+      - text: thread where people can comment and you can discuss.
+    - listitem [ref=f4e30]:
+      - strong [ref=f4e31]: Contact
+      - text: — mailto contact form
+  - heading [level=2] [ref=f4e32]:
+    - text: Tech
+    - link "Anchor" [ref=f4e33] [cursor=pointer]:
+      - /url: "#tech"
+      - text: 
+  - list [ref=f4e34]:
+    - listitem [ref=f4e35]: Next.js 14 (static export → GitHub Pages)
+    - listitem [ref=f4e36]: TypeScript
+    - listitem [ref=f4e37]: Tailwind CSS with the “Research-Grade AI” design system (midnight indigo + indigo→violet gradient + warm amber/coral accents; Space Grotesk / Inter / JetBrains Mono; dark-first with light mode)
+    - listitem [ref=f4e38]: Supabase for the public chat/comment backend
+  - heading [level=2] [ref=f4e39]:
+    - text: Setup
+    - link "Anchor" [ref=f4e40] [cursor=pointer]:
+      - /url: "#setup"
+      - text: 
+  - code [ref=f4e44]: "npm install npm run dev # local dev npm run build # static export to ./out"
+  - heading [level=3] [ref=f4e45]:
+    - text: Supabase (public chat)
+    - link "Anchor" [ref=f4e46] [cursor=pointer]:
+      - /url: "#supabase-public-chat"
+      - text: 
+  - list [ref=f4e47]:
+    - listitem [ref=f4e48]: Create a Supabase project.
+    - listitem [ref=f4e49]:
+      - text: Copy
+      - code [ref=f4e50]: .env.example
+      - text: to
+      - code [ref=f4e51]: .env.local
+      - text: "and fill in:"
+      - code [ref=f4e55]: NEXT_PUBLIC_SUPABASE_URL=... NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+    - listitem [ref=f4e56]:
+      - text: Run the SQL in
+      - code [ref=f4e57]: supabase/schema.sql
+      - text: in the Supabase SQL editor to create the
+      - code [ref=f4e58]: chat_messages
+      - text: table with public read/insert policies.
+  - paragraph [ref=f4e59]:
+    - text: The chat threads are keyed per note/idea (e.g.
+    - code [ref=f4e60]: domain-slug/study-id/note-id
+    - text: ), so each finding/note/borrowing/idea gets its own public discussion.
+  - heading [level=3] [ref=f4e61]:
+    - text: Content
+    - link "Anchor" [ref=f4e62] [cursor=pointer]:
+      - /url: "#content"
+      - text: 
+  - paragraph [ref=f4e63]:
+    - text: Content lives in
+    - code [ref=f4e64]: content/
+    - text: ":"
+  - list [ref=f4e65]:
+    - listitem [ref=f4e66]:
+      - code [ref=f4e67]: content/projects.ts
+      - text: — open-source projects
+    - listitem [ref=f4e68]:
+      - code [ref=f4e69]: content/research.ts
+      - text: — papers/publications
+    - listitem [ref=f4e70]:
+      - code [ref=f4e71]: content/domains.ts
+      - text: — domains of interest, each with nested
+      - code [ref=f4e72]: studied[]
+      - text: items, each with
+      - code [ref=f4e73]: notes[]
+      - text: of kind
+      - code [ref=f4e74]: finding | note | borrowing | idea
+  - paragraph [ref=f4e75]: Currently content is placeholder — replace it with real material (e.g. from your PDFs).
+  - heading [level=2] [ref=f4e76]:
+    - text: Deployment (GitHub Pages)
+    - link "Anchor" [ref=f4e77] [cursor=pointer]:
+      - /url: "#deployment-github-pages"
+      - text: 
+  - paragraph [ref=f4e78]:
+    - text: The repo builds a static export to
+    - code [ref=f4e79]: out/
+    - text: and deploys it to GitHub Pages via the workflow in
+    - code [ref=f4e80]: .github/workflows/deploy.yml
+    - text: . On push to
+    - code [ref=f4e81]: main
+    - text: (or manual dispatch), it builds and deploys.
+  - paragraph [ref=f4e82]: "To make the public chat work in production, add the Supabase keys as GitHub Actions secrets:"
+  - list [ref=f4e83]:
+    - listitem [ref=f4e84]:
+      - code [ref=f4e85]: NEXT_PUBLIC_SUPABASE_URL
+    - listitem [ref=f4e86]:
+      - code [ref=f4e87]: NEXT_PUBLIC_SUPABASE_ANON_KEY
+  - paragraph [ref=f4e88]:
+    - text: The site’s canonical URL is
+    - code [ref=f4e89]: https://aahmads.github.io/
+    - text: .
