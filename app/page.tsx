@@ -61,8 +61,9 @@ export default function HomePage() {
               ))}
             </div>
             <p className="mt-6 max-w-[540px] text-lg" style={{ color: 'var(--text-secondary)' }}>
-              Sharif CS undergrad working where linguistics meets AI — 3 published papers, the live Kolbeh
-              real-estate AI platform, Persian voice agents, and open tools I actually use.
+              Sharif CS graduate working where linguistics meets AI — 2 published papers, 2 preprints under review,
+              the Kolbeh real-estate AI startup I founded and shut down in January 2026, Persian voice agents,
+              and open tools I actually use.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link href="/research" className="btn-primary">View Research</Link>
@@ -129,7 +130,7 @@ export default function HomePage() {
               <div className="section-label">Research</div>
               <h3 className="mt-3 font-display text-xl font-bold">Publications</h3>
               <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
-                {papers.filter((p) => p.venue !== 'In progress').length} published + {papers.filter((p) => p.venue === 'In progress').length} in-progress across NLP, RL, and vision-language research.
+                {papers.filter((p) => p.group === 'published').length} published · {papers.filter((p) => p.group === 'under-review').length} under review · {papers.filter((p) => p.group === 'ongoing').length} ongoing · {papers.filter((p) => p.group === 'unfinished').length} unfinished.
               </p>
             </Link>
             <Link href="/projects" className="glass-card p-7">

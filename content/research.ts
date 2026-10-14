@@ -7,7 +7,8 @@ export const papers: Paper[] = [
       'SDPERL: A Framework for Software Defect Prediction Using Ensemble Feature Extraction and Reinforcement Learning',
     year: '2024',
     meta: '17 citations',
-    venue: 'arXiv',
+    venue: 'arXiv preprint · under review',
+    group: 'under-review',
     summary:
       'File-level software defect prediction combining ensemble feature extraction (five code-specific pre-trained models) with PPO reinforcement-learning feature selection. +6.25% average F1 over baselines on PROMISE.',
     abstract:
@@ -27,6 +28,7 @@ export const papers: Paper[] = [
     year: '2026',
     meta: '2 citations · equal contribution',
     venue: 'J. Royal Statistical Society Series A',
+    group: 'published',
     summary:
       'Journal version of the JCNSRA work: transformer-enhanced deep RL for joint node selection + channel funding in Bitcoin\u2019s Lightning Network, with a more realistic routing simulation. Revenue incentives align with decentralization.',
     abstract:
@@ -47,6 +49,7 @@ export const papers: Paper[] = [
     year: '2025',
     meta: '2 citations · equal contribution',
     venue: 'Findings of NAACL 2025',
+    group: 'published',
     summary:
       'Published at NAACL 2025 Findings (pp. 3158–3172): Text-Image-Expression dataset pairing LLM-generated emotion descriptions with images and 3D blendshapes, plus a new Emo3D metric that beats MSE at judging emotional fidelity.',
     abstract:
@@ -65,7 +68,8 @@ export const papers: Paper[] = [
       'From Illusion to Insight: Change-Aware File-Level Software Defect Prediction Using Agentic AI',
     year: '2025',
     meta: '2 citations',
-    venue: 'arXiv preprint',
+    venue: 'arXiv preprint · under review',
+    group: 'under-review',
     summary:
       'Follow-up to SDPERL: change-aware file-level defect prediction with agentic AI. With M. Hesamolhokama, B. Rouhani, M. Fazli, J. Habibi.',
     abstract:
@@ -76,8 +80,9 @@ export const papers: Paper[] = [
     slug: 'x-bliva',
     title: 'X-Bliva: LVLMs Learn to Think Like a Radiologist',
     year: '2025',
-    meta: 'Under revision',
-    venue: 'In progress',
+    meta: 'Under revision · unfinished',
+    venue: 'Unfinished',
+    group: 'unfinished',
     summary:
       'Dataset + model for medical visual question answering in chest radiology: LLM-generated pipeline with prompt optimization and human verification, hand-crafted domain queries, and an LLM-as-a-Judge. Supervised by Prof. F. Firouzi (Duke).',
     abstract:
@@ -88,8 +93,9 @@ export const papers: Paper[] = [
     slug: 'trl',
     title: 'TRL: Tutorical Refinement Loop — Tutor-to-Student DPO Story Generation',
     year: '2026',
-    meta: 'In progress',
-    venue: 'In progress',
+    meta: 'Ongoing',
+    venue: 'Ongoing',
+    group: 'ongoing',
     summary:
       'A tutor model (Qwen3-8B) refines a student (Llama-3.2-1B) via DPO on ROCStories, compared against three baselines. MIT-licensed repo with research tracker and CITATION.cff.',
     abstract:
@@ -100,36 +106,13 @@ export const papers: Paper[] = [
     slug: 'llm-evaluation',
     title: 'Can LLMs Evaluate? Judging Summarization and Alignment Quality',
     year: '2025',
-    meta: 'In progress',
-    venue: 'In progress',
+    meta: 'Unfinished',
+    venue: 'Unfinished',
+    group: 'unfinished',
     summary:
       'Definement-vs-scoring study of LLM judges (GPT-4o/mini, LLaMA-3.3-70B, Qwen2.5-32B, Mixtral-8x22B) on USR, SummEval, SumPubMed, and HelpSteer2.',
     abstract:
       'We compare ways of asking LLMs to evaluate generated text — definement versus direct scoring — across summarization and alignment benchmarks (USR, SummEval, SumPubMed, HelpSteer2) with a panel of open and closed judges. Started under supervision of Prof. M. Aliannejadi (University of Amsterdam) as an analytical study of LLM evaluators: quality, biases, reliability. Work in progress; findings feed the Domains notes on evaluation methodology. No public preprint yet.',
-    links: [],
-  },
-  {
-    slug: 'llm-for-code',
-    title: 'LLM-for-Code: Defect Prediction, Mutation, and Repair with Agentic Loops',
-    year: '2025',
-    meta: 'In progress',
-    venue: 'In progress',
-    summary:
-      'Framework comparing vanilla, in-context, and ART agentic loops for defect prediction, mutation testing, and program repair across GPT-4o/4.1, Qwen2.5, Mixtral, LLaMA, DeepSeek, and Gemma.',
-    abstract:
-      'An evaluation framework for code LLMs on three software-engineering tasks — defect prediction, mutation testing, program repair — contrasting vanilla prompting, in-context learning, and ART-style agentic loops across a wide model panel. Continues the SDPERL line from static prediction toward repair. Work in progress; no public preprint yet.',
-    links: [],
-  },
-  {
-    slug: 'persian-multimodal-reasoning',
-    title: 'Multimodal Multilingual Reasoning: Persian vs English',
-    year: '2025',
-    meta: 'Early stage',
-    venue: 'In progress',
-    summary:
-      'Early Aya-Expedition study comparing multimodal reasoning in Persian versus English. Prototype evaluation harness; results pending.',
-    abstract:
-      'Motivated by the gap between English and Persian multimodal performance, this early-stage project builds an evaluation harness comparing Persian-vs-English multimodal reasoning via the Aya Expedition program. Prototype stage (API loader + evaluation scripts). No results published yet — listed here for honesty about direction, not as a claim.',
     links: [],
   },
 ];

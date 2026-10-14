@@ -72,7 +72,6 @@ export const regrets: Regret[] = [
       'Bilingual benchmark harness construction',
     ],
     related: [
-      { label: 'Research: Persian vs English (early)', href: '/research/persian-multimodal-reasoning/' },
       { label: 'Domain: Vision-Language Models', href: '/domains/vision-language-models/' },
     ],
   },

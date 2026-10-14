@@ -8,13 +8,6 @@ export interface ExperienceItem {
 export const nowItems: ExperienceItem[] = [
   {
     period: 'Now',
-    title: 'Founder / Builder — Kolbeh AI real-estate platform',
-    org: 'mykolbeh.com',
-    detail:
-      'Live platform: ASP.NET pricing/auth backend, ML pricer, Next.js client, Nuxt landing. Production-critical; integration-first development.',
-  },
-  {
-    period: 'Now',
     title: 'AI practice — voice, audits, automation',
     org: 'Studio work',
     detail:
@@ -27,15 +20,22 @@ export const nowItems: ExperienceItem[] = [
     detail:
       'OpenTimeLogger, OpenTaskManager, OpenPointLogger, iResearcher agent, TSE Option Lab.',
   },
+  {
+    period: 'Now',
+    title: 'Ongoing paper — TRL',
+    org: 'Research',
+    detail:
+      'Tutor-to-student DPO story generation (Qwen3-8B → Llama-3.2-1B on ROCStories). The one paper in active progress.',
+  },
 ];
 
 export const beforeItems: ExperienceItem[] = [
   {
-    period: '2024',
-    title: '3 arXiv papers',
+    period: '2024–2026',
+    title: '2 published · 2 under review · 2 unfinished',
     org: 'Sharif + collaborators',
     detail:
-      'SDPERL (defect prediction + RL), Lightning Network JCNSRA (attention RL), Emo3D (3D faces dataset + metric).',
+      'Published: Emo3D (NAACL 2025 Findings) and Lightning Network JCNSRA (JRSS Series A 2026). Under review: SDPERL and the agentic defect-prediction preprint. Unfinished: LLM-evaluation and X-Bliva.',
   },
   {
     period: '2024',
@@ -73,9 +73,16 @@ export const beforeItems: ExperienceItem[] = [
       'Elected secretary of the department student union, Nov 2022–Jun 2023. Contributor, GNN study group (Prof. Sarbazi-Azad).',
   },
   {
+    period: '2025–Jan 2026',
+    title: 'Founder — Kolbeh AI real-estate platform (failed)',
+    org: 'mykolbeh.com',
+    detail:
+      'My startup attempt: ASP.NET pricing/auth backend, ML pricer, Next.js client, Nuxt landing. Shut down January 2026 — it did not make it. The engineering feeds everything since.',
+  },
+  {
     period: 'Ongoing',
-    title: 'B.Sc. Computer Science',
+    title: 'B.Sc. Computer Science — completed',
     org: 'Sharif University of Technology',
-    detail: 'Undergraduate; focus on linguistics x AI. Tehran, Iran.',
+    detail: 'Graduated over a year ago. GPA 17.38/20; B.Sc. project 20/20; graduate-level NLP 19.3/20.',
   },
 ];

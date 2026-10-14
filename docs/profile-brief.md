@@ -3,7 +3,7 @@
 Use this file as the source of truth for website edits. Non-perfectionist: ship crawlable, factual, no placeholders.
 
 ## Identity
-- AI Researcher + Builder, CS undergrad at Sharif University of Technology, Tehran.
+- AI Researcher + Builder, CS graduate (Sharif University of Technology, B.Sc. completed 2025), Tehran.
 - Core: linguistics × AI — NLP, Conversational AI / Voice, Vision-Language Models, RL.
 - Bilingual EN/FA focus (Persian NLP, RTL UX, Persian voice agents).
 - Contact: shafieeamirahmadii@gmail.com, github.com/AAhmadS, scholar user=bmO8gCYAAAAJ, linkedin amirahmad-shafiee, t.me/notamira.
@@ -24,7 +24,8 @@ Use this file as the source of truth for website edits. Non-perfectionist: ship 
 
 ## Website rules
 - Curated max 12-15 projects. Tiers: Ventures (Kolbeh platform as ONE flagship + finAI, CRM-Mini, CultAI), Tools/OSS (iResearcher, OpenTaskManager, OpenTimeLogger, OpenPointLogger, PDF-reader, optlab), Research-impl (SDPERL, Lightning, ClipViT, TRL). Client work separate from OSS. Never list: iPrOp, OpenCHA, OrTOS. Never mention Konkur.
-- Research page: 3 published (SDPERL, Lightning-RL, Emo3D) + 4 in-progress (TRL, LLM-Eval, LLM-for-Code, Persian-vs-English) clearly labeled.
+- Research record (user-corrected 2026-10-14): 2 PUBLISHED (Emo3D NAACL 2025 Findings; Lightning JCNSRA → JRSS Series A 2026) + 2 UNDER REVIEW on arXiv (SDPERL; Illusion-to-Insight) + 2 UNFINISHED (llm-evaluation, X-Bliva) + 1 ONGOING (TRL). Never add llm-for-code or persian-multimodal-reasoning as research entries (removed).
+- Kolbeh: startup attempt, shut down January 2026 (failed). Site speaks of it in past tense. Full post-mortem integration review: docs/kolbeh-eco-review.md.
 - Regrets page (`/regrets`, added 2026-10-14): llama-clipvit, llm-evaluation, persian-multimodal-reasoning. Each = story narration + regret + capabilities + related links. Honest framing, no hype.
 - Tone: builder-researcher, factual, no hype. No placeholder text — omit rather than fake.
 - SEO: canonical https://aahmads.github.io/, static export, real routes only (no # fragments in sitemap).

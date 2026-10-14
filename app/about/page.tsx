@@ -55,17 +55,17 @@ export default function AboutPage() {
         <div className="glass-card p-8">
           <div className="max-w-3xl space-y-4 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
             <p>
-              I&rsquo;m an undergraduate <strong className="font-semibold" style={{ color: 'var(--text-primary)' }}>Computer Science</strong> student
-              at <strong className="font-semibold" style={{ color: 'var(--text-primary)' }}>Sharif University of Technology</strong>, driven by a deep
+              I&rsquo;m a <strong className="font-semibold" style={{ color: 'var(--text-primary)' }}>Computer Science</strong> graduate
+              of <strong className="font-semibold" style={{ color: 'var(--text-primary)' }}>Sharif University of Technology</strong>, driven by a deep
               fascination with the intersection of <strong className="font-semibold" style={{ color: 'var(--text-primary)' }}>linguistics and artificial intelligence</strong>.
               My research interests span Natural Language Processing, Conversational AI systems, Vision-Language Models, and
               Reinforcement Learning — and how these combine into more intelligent, human-like AI.
             </p>
             <p>
               Through academic projects and research collaborations, I&rsquo;ve gained experience developing novel approaches to
-              problems in software engineering, blockchain technology, and computer vision. Since 2025 I build full-stack AI
-              products in Persian and English — most notably the Kolbeh real-estate platform — alongside an audit, voice-agent,
-              and automation practice.
+              problems in software engineering, blockchain technology, and computer vision. Since 2025 I built full-stack AI
+              products in Persian and English — most notably the Kolbeh real-estate platform, my startup attempt that shut
+              down in January 2026 — alongside an audit, voice-agent, and automation practice.
             </p>
           </div>
 
@@ -83,7 +83,7 @@ export default function AboutPage() {
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           <div className="glass-card p-6">
             <div className="font-mono text-xs uppercase tracking-wider" style={{ color: 'var(--brand-start)' }}>
-              2020 — present · B.Sc. Computer Science
+              2020 — 2025 · B.Sc. Computer Science
             </div>
             <h3 className="mt-2 font-display text-lg font-bold">Sharif University of Technology</h3>
             <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>

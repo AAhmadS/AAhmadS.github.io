@@ -4,16 +4,16 @@ export const projects: Project[] = [
   {
     slug: 'kolbeh-platform',
     title: 'Kolbeh — AI Real-Estate Platform',
-    badge: 'Venture · Flagship',
+    badge: 'Venture · Shut down Jan 2026',
     summary:
-      'Full-stack property platform (mykolbeh.com): C# ASP.NET backend with OTP/JWT auth and AI pricing APIs, Next.js client, Nuxt landing, and an ML pricer (CatBoost/XGBoost/LightGBM, MAPE ~0.15). Live and actively developed.',
+      'My startup attempt (2025–Jan 2026): full-stack property platform (mykolbeh.com) with C# ASP.NET OTP/JWT backend, ML pricer (MAPE ~0.15), Next.js client, and Nuxt landing. It failed — documented here honestly.',
     description:
-      'My main venture. Backend: ASP.NET Core 8 + EF/Postgres + Redis + SignalR — 18 controllers covering OTP/JWT users, SmartRealEstatePricing (incl. V2 background jobs), estate delegation, ads, wishlist, location, blog. AI pricer: FastAPI service (CatBoost/XGBoost/LightGBM) fed by property crawlers, calling back into the pricing API. Frontends: Next.js client (Orval-generated API layer) and a Nuxt SEO landing. Deployed on Liara; mykolbeh.com. Status: live, in active development — backend and pricer are production-critical, so integration work happens around them, not in them.',
+      'My startup attempt, now finished. Backend: ASP.NET Core 8 + EF/Postgres + Redis + SignalR — 18 controllers covering OTP/JWT users, SmartRealEstatePricing (incl. V2 background jobs), estate delegation, ads, wishlist, location, blog. AI pricer: FastAPI service (CatBoost/XGBoost/LightGBM) fed by property crawlers, calling back into the pricing API. Frontends: Next.js client (Orval-generated API layer) and a Nuxt SEO landing, deployed on Liara. The venture did not survive — it shut down in January 2026 — but the engineering (auth, pricing pipeline, bilingual product) feeds everything I build since.',
     tech: ['C#', 'ASP.NET Core', 'Postgres', 'Next.js', 'Nuxt', 'FastAPI', 'CatBoost'],
     links: [{ label: 'Website', href: 'https://mykolbeh.com' }],
-    year: '2025–2026',
+    year: '2025–Jan 2026',
     kind: 'venture',
-    status: 'Live · active',
+    status: 'Shut down · failed startup',
   },
   {
     slug: 'foreign-word-detector',

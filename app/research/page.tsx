@@ -35,37 +35,36 @@ function PaperCard({ p }: { p: (typeof papers)[number] }) {
 }
 
 export default function ResearchPage() {
-  const published = papers.filter((p) => p.venue !== 'In progress');
-  const ongoing = papers.filter((p) => p.venue === 'In progress');
+  const groups = [
+    { key: 'published', heading: 'Published', blurb: 'Peer-reviewed papers.' },
+    { key: 'under-review', heading: 'Under review', blurb: 'Preprints submitted and under review.' },
+    { key: 'ongoing', heading: 'Ongoing', blurb: 'The paper in active progress.' },
+    { key: 'unfinished', heading: 'Unfinished', blurb: 'Honest loose ends — real work, no paper. Listed for direction, not as claims.' },
+  ] as const;
   return (
     <div className="pb-24">
       <PageHeader
         eyebrow="// 02 — Research & Publications"
         title={<>Selected <span className="gradient-text">Publications</span></>}
-        subtitle="Published papers plus honest in-progress work — labeled as such."
+        subtitle="Two published papers, two preprints under review, one ongoing, two unfinished — labeled exactly as they are."
       />
 
       <div className="mx-auto max-w-[1160px] px-6">
-        <h2 className="font-display text-2xl font-bold">Published</h2>
-        <div className="mt-6 flex flex-col gap-5">
-          {published.map((p) => (
-            <PaperCard key={p.slug} p={p} />
-          ))}
-        </div>
-
-        {ongoing.length > 0 && (
-          <>
-            <h2 className="mt-12 font-display text-2xl font-bold">In progress</h2>
-            <p className="mt-2" style={{ color: 'var(--text-secondary)' }}>
-              Active studies, no preprint yet — listed for direction, not as claims.
-            </p>
-            <div className="mt-6 flex flex-col gap-5">
-              {ongoing.map((p) => (
-                <PaperCard key={p.slug} p={p} />
-              ))}
-            </div>
-          </>
-        )}
+        {groups.map((g) => {
+          const items = papers.filter((p) => p.group === g.key);
+          if (items.length === 0) return null;
+          return (
+            <section key={g.key} className="mt-12 first:mt-0">
+              <h2 className="font-display text-2xl font-bold">{g.heading}</h2>
+              <p className="mt-2" style={{ color: 'var(--text-secondary)' }}>{g.blurb}</p>
+              <div className="mt-6 flex flex-col gap-5">
+                {items.map((p) => (
+                  <PaperCard key={p.slug} p={p} />
+                ))}
+              </div>
+            </section>
+          );
+        })}
       </div>
     </div>
   );

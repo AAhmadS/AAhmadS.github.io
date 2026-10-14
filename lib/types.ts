@@ -22,6 +22,7 @@ export interface Paper {
   year: string;
   meta: string;
   venue?: string;
+  group?: 'published' | 'under-review' | 'unfinished' | 'ongoing';
   summary: string;
   abstract: string;
   links: PaperLink[];
