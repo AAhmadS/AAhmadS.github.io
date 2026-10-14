@@ -67,10 +67,10 @@ export const beforeItems: ExperienceItem[] = [
   },
   {
     period: '2022–2023',
-    title: 'Secretary, Mathematical Sciences Students’ Union',
+    title: 'Chair (دبیر), Mathematical Sciences Student Council',
     org: 'Sharif University of Technology',
     detail:
-      'Elected secretary of the department student union, Nov 2022–Jun 2023. Contributor, GNN study group (Prof. Sarbazi-Azad).',
+      'Elected head of the department student council, Nov 2022–Jun 2023. Contributor, GNN study group (Prof. Sarbazi-Azad).',
   },
   {
     period: '2020–2025',
