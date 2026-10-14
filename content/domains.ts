@@ -44,28 +44,28 @@ export const domains: Domain[] = [
       'From paper ideas to production voice: Persian farmer voice agents, crowdfunding chatbots, and the evaluation science that keeps them honest.',
     studied: [
       {
-        id: 'baghboon-voice',
-        name: 'Baghboon Persian voice agent (Phase-0)',
+        id: 'persian-voice-eval',
+        name: 'Persian voice evaluation (Wisdom-Era applied work)',
         description:
-          'Production-leaning Persian voice pipeline for farmers: FastAPI adapter over AvalAI/OpenAI/OpenRouter plus local faster-whisper and VITS-ONNX, with WER/SW-WER/CER benches — 137 tests passing.',
+          'Production-leaning Persian voice pipelines: server adapters over speech APIs plus local faster-whisper and VITS-ONNX, with word/sub-word/character error benches — 137 tests passing on the reference build.',
         notes: [
           {
-            id: 'bv-finding',
+            id: 'pv-finding',
             kind: 'finding',
-            title: 'Measure first: WER/SW-WER/CER bench before tuning',
-            body: 'The bench suite (word, sub-word, and character error rates on farm-domain utterances) caught more real failures than any model swap. Local faster-whisper + VITS-ONNX proved viable for on-prem Persian before paying for APIs.',
+            title: 'Measure first: error-rate benches before tuning',
+            body: 'A bench suite (word, sub-word, and character error rates on domain utterances) caught more real failures than any model swap. Local faster-whisper + VITS-ONNX proved viable for on-prem Persian before paying for APIs.',
           },
           {
-            id: 'bv-borrowing',
+            id: 'pv-borrowing',
             kind: 'borrowing',
-            title: 'Bench harness reused in cafebeler + CF-Chatbot',
-            body: 'The same measure-first pattern now backs the cafebeler voice-ordering MVP and the Carinx crowdfunding agent (Jev J1–J8 eval gates): ship the eval, then the model.',
+            title: 'Bench harness reused across ordering + support agents',
+            body: 'The same measure-first pattern backs voice-ordering and crowdfunding-support agents (eval-gated releases): ship the eval, then the model.',
           },
           {
-            id: 'bv-idea',
+            id: 'pv-idea',
             kind: 'idea',
-            title: 'Persian voice eval as a public benchmark?',
-            body: 'Farm-domain Persian speech has no standard bench. I am considering open-sourcing the bench split — if you work on Persian ASR/TTS, tell me what a useful public split would contain.',
+            title: 'Domain Persian speech has no standard bench',
+            body: 'I am considering open-sourcing a bench split — if you work on Persian ASR/TTS, tell me what a useful public split would contain.',
           },
         ],
       },

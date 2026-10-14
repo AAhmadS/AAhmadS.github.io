@@ -22,7 +22,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1160px] px-6">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <p className="font-mono text-sm" style={{ color: 'var(--text-tertiary)' }}>
-            Built with <span className="gradient-text">♥</span> by Amirahmad Shafiee
+            Alibaba had Genie, 2026 Its called AI. I asked for, Genie built, more than 3
           </p>
           <div className="flex gap-2.5">
             {socials.map(({ label, href, Icon }) => (

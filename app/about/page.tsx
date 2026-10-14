@@ -65,7 +65,8 @@ export default function AboutPage() {
               Through academic projects and research collaborations, I&rsquo;ve gained experience developing novel approaches to
               problems in software engineering, blockchain technology, and computer vision. Since 2025 I built full-stack AI
               products in Persian and English — most notably the Kolbeh real-estate platform, my startup attempt that shut
-              down in January 2026 — alongside an audit, voice-agent, and automation practice.
+              down in January 2026 — alongside applied AI work (Wisdom-Era), FinTech multi-agent systems (Yara),
+              and my private company Chantex.
             </p>
           </div>
 

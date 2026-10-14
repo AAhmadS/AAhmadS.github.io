@@ -3,6 +3,7 @@ import { projects } from '@/content/projects';
 import { papers } from '@/content/research';
 import { domains } from '@/content/domains';
 import { regrets } from '@/content/regrets';
+import { chantexProducts } from '@/content/chantex';
 import { SiGithub, SiGooglescholar, SiTelegram } from 'react-icons/si';
 import { FiMail } from 'react-icons/fi';
 import { FaLinkedinIn } from 'react-icons/fa';
@@ -62,8 +63,8 @@ export default function HomePage() {
             </div>
             <p className="mt-6 max-w-[540px] text-lg" style={{ color: 'var(--text-secondary)' }}>
               Sharif CS graduate working where linguistics meets AI — 2 published papers, 2 preprints under review,
-              the Kolbeh real-estate AI startup I founded and shut down in January 2026, Persian voice agents,
-              and open tools I actually use.
+              the Kolbeh real-estate AI startup I founded and shut down in January 2026, Persian voice systems,
+              and the private tooling I actually use.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link href="/research" className="btn-primary">View Research</Link>
@@ -152,6 +153,27 @@ export default function HomePage() {
               <h3 className="mt-3 font-display text-xl font-bold">Regrets</h3>
               <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
                 {regrets.length} unfinished projects, what each taught, and the capabilities they left.
+              </p>
+            </Link>
+            <Link href="/chantex" className="glass-card p-7">
+              <div className="section-label">Private</div>
+              <h3 className="mt-3 font-display text-xl font-bold">Chantex</h3>
+              <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                My private company: {chantexProducts.map((p) => p.name).join(', ')}. Methods undisclosed.
+              </p>
+            </Link>
+            <Link href="/hambast" className="glass-card p-7">
+              <div className="section-label">Company</div>
+              <h3 className="mt-3 font-display text-xl font-bold">Hambast</h3>
+              <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                My Fin-AI company: Persian auto-accounting and invoice OCR.
+              </p>
+            </Link>
+            <Link href="/becoming" className="glass-card p-7">
+              <div className="section-label">Journey</div>
+              <h3 className="mt-3 font-display text-xl font-bold">Becoming</h3>
+              <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                Personal audits: what I did not know, how I get powerful, where this goes.
               </p>
             </Link>
           </div>

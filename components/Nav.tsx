@@ -12,6 +12,9 @@ const links = [
   { href: '/research', label: 'Research' },
   { href: '/projects', label: 'Projects' },
   { href: '/domains', label: 'Domains' },
+  { href: '/chantex', label: 'Chantex' },
+  { href: '/hambast', label: 'Hambast' },
+  { href: '/becoming', label: 'Becoming' },
   { href: '/regrets', label: 'Regrets' },
   { href: '/contact', label: 'Contact' },
 ];
