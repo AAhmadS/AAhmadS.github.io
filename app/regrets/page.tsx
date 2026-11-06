@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import type { Metadata } from 'next';
 import { PageHeader } from '@/components/PageHeader';
+import { Ledger, type LedgerRow } from '@/components/Ledger';
 import { regrets } from '@/content/regrets';
 
 export const metadata: Metadata = {
@@ -10,38 +10,28 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://aahmads.github.io/regrets/' },
 };
 
+const rows: LedgerRow[] = regrets.map((r) => ({
+  id: r.slug,
+  when: r.period,
+  title: r.project,
+  titleHref: `/regrets/${r.slug}/`,
+  summary: r.tagline,
+}));
+
 export default function RegretsPage() {
   return (
-    <div className="pb-24">
+    <>
       <PageHeader
-        eyebrow="// Regrets"
-        title={<>Things I <span className="gradient-text">Regret</span></>}
+        title="Things I Regret"
         subtitle="Unfinished and mis-aimed projects I keep public on purpose: what I regret about each, the expertise hiding inside them, and the capabilities they left me — told as stories."
       />
 
-      <div className="mx-auto max-w-[1160px] px-6">
-        <div className="flex flex-col gap-5">
-          {regrets.map((r) => (
-            <Link key={r.slug} href={`/regrets/${r.slug}`} className="glass-card relative p-7 pl-9">
-              <span
-                aria-hidden
-                className="absolute left-0 top-6 bottom-6 w-[3px] rounded"
-                style={{ background: 'linear-gradient(135deg,#f59e0b,#fb7185)' }}
-              />
-              <div className="flex flex-wrap items-start justify-between gap-3">
-                <h2 className="font-display text-lg font-bold leading-snug">{r.project}</h2>
-                <span className="tag shrink-0">{r.period}</span>
-              </div>
-              <p className="mt-3 text-sm" style={{ color: 'var(--text-secondary)' }}>
-                {r.tagline}
-              </p>
-              <div className="mt-4 font-mono text-xs" style={{ color: 'var(--brand-start)' }}>
-                Read the story →
-              </div>
-            </Link>
-          ))}
+      <div className="container-site">
+        <div className="section-body pt-0">
+          {/* The only heading above the list is the h1, so the row titles are paragraphs (no skipped heading level). */}
+          <Ledger as="ul" titleAs="p" aria-label="Regrets" items={rows} />
         </div>
       </div>
-    </div>
+    </>
   );
 }

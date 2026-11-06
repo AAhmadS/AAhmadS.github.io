@@ -45,7 +45,7 @@ export const domains: Domain[] = [
     studied: [
       {
         id: 'persian-voice-eval',
-        name: 'Persian voice evaluation (Wisdom-Era applied work)',
+        name: 'Persian voice evaluation (Wisdom Era applied work)',
         description:
           'Production-leaning Persian voice pipelines: server adapters over speech APIs plus local faster-whisper and VITS-ONNX, with word/sub-word/character error benches — 137 tests passing on the reference build.',
         notes: [
@@ -94,7 +94,7 @@ export const domains: Domain[] = [
             id: 'jcnsra-borrowing',
             kind: 'borrowing',
             title: 'Joint discrete+continuous framing reused twice',
-            body: 'The same framing (choose where, then decide how much) now structures my TSE option-hedging work (PPO hedger in Option Lab) and the Kolbeh pricing-request scheduler: selection first, sizing second.',
+            body: 'The same framing (choose where, then decide how much) now structures my TSE option-hedging work (PPO hedger in Option Lab): selection first, sizing second.',
           },
           {
             id: 'jcnsra-idea',
@@ -129,7 +129,7 @@ export const domains: Domain[] = [
             id: 'vlm-borrowing',
             kind: 'borrowing',
             title: 'LLM-generated descriptions as cheap supervision',
-            body: 'Using LLMs to generate diverse textual descriptions (the Emo3D dataset trick) is now my default for bootstrapping paired data — reused for invoice-OCR prompt variety and Persian voice-agent test utterances.',
+            body: 'Using LLMs to generate diverse textual descriptions (the Emo3D dataset trick) is now my default for bootstrapping paired data — reused for Persian voice-agent test utterances.',
           },
           {
             id: 'vlm-idea',

@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import { SiGithub, SiGooglescholar, SiTelegram } from 'react-icons/si';
 import { FiMail } from 'react-icons/fi';
 import { FaLinkedinIn } from 'react-icons/fa';
+import { SmartLink } from './SmartLink';
 
 const socials = [
   { label: 'GitHub', href: 'https://github.com/AAhmadS', Icon: SiGithub },
@@ -17,36 +17,24 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="border-t py-12"
-      style={{ borderColor: 'var(--surface-border)' }}>
-      <div className="mx-auto max-w-[1160px] px-6">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <p className="font-mono text-sm" style={{ color: 'var(--text-tertiary)' }}>
-            Alibaba had Genie, 2026 Its called AI. I asked for, Genie built, more than 3
-          </p>
-          <div className="flex gap-2.5">
-            {socials.map(({ label, href, Icon }) => (
-              <Link
-                key={label}
-                href={href}
-                target={href.startsWith('http') ? '_blank' : undefined}
-                rel="noopener noreferrer"
-                aria-label={label}
-                title={label}
-                className="flex h-9 w-9 items-center justify-center rounded-lg border text-base transition-all hover:-translate-y-px"
-                style={{
-                  background: 'var(--surface)',
-                  borderColor: 'var(--surface-border)',
-                  color: 'var(--text-secondary)',
-                }}
-              >
-                <Icon />
-              </Link>
-            ))}
-          </div>
-        </div>
-        <p className="mt-5 border-t pt-5 text-center text-sm"
-          style={{ color: 'var(--text-tertiary)', borderColor: 'var(--surface-border)' }}>
+    <footer className="site-footer mt-auto border-t border-line">
+      <div className="container-site py-10">
+        <p className="max-w-measure text-muted">
+          Alibaba had Genie, 2026 Its called AI. I asked for, Genie built, more than 3
+        </p>
+
+        <ul role="list" className="m-0 mt-4 flex list-none flex-wrap gap-x-6 p-0">
+          {socials.map(({ label, href, Icon }) => (
+            <li key={label}>
+              <SmartLink href={href} allowMailto className="footer-link">
+                <Icon aria-hidden="true" size={18} />
+                <span>{label}</span>
+              </SmartLink>
+            </li>
+          ))}
+        </ul>
+
+        <p className="meta mt-6 border-t border-line pt-6">
           © {new Date().getFullYear()} Amirahmad Shafiee. All rights reserved.
         </p>
       </div>

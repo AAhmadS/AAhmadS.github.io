@@ -37,3 +37,38 @@ Use this file as the source of truth for website edits. Non-perfectionist: ship 
 - Tone: builder-researcher, factual, no hype. No placeholder text — omit rather than fake.
 - SEO: canonical https://aahmads.github.io/, static export, real routes only (no # fragments in sitemap).
 - Kolbeh projects: READ-ONLY. No code changes there without explicit approval (critical production).
+
+## Update 2026-11-04
+Sources: Work CV (rebuilt 2026-11-04), applicant.md (dated corrections), CS CV. These lines are additive; where an older line above conflicts, this section wins.
+
+### Experience
+- Carinx is Amirahmad's own company, Sep 2026 – present, https://carinx.ir (agentic chatbot for crowdfunding).
+- Wisdom Era, Mar 2026 – present, https://www.wisdomera.net/, holds two projects:
+  - Hambast, Jul 2026 – present, https://hambast.ir. First live case: the company accounting of **ModAI** (https://modai.fashion). Spell it "ModAI", in bold.
+  - Baghboon, Mar 2026 – Jun 2026, https://baghboon.com (Persian voice agent, speech-to-text benchmarks, entity-resolution pipeline). Baghboon is named.
+- Yara is a separate project, Dec 2024 – Jul 2025, outside Wisdom Era. No link, no logo. No embedding fine-tuning claim, no prompt-optimization or workflow-optimizer claim, no LangServe.
+- Kolbeh: AI real-estate startup, closed in January 2026. Past tense everywhere. Director of Technology Jul 2025 – Jan 2026; Product Manager and Data Scientist Mar 2025 – Jul 2025. Built the engineering team and led product development; managed development of the valuation engine and developed its data crawling. No deployment, production-API, serving or hosting claims. Never link mykolbeh.com. CRM-Mini is removed (its URL redirects to /projects/).
+
+### Research
+- From Illusion to Insight: under review after revision at the Journal of Systems and Software. The asynchronous framework is for agent deployment and inference, not evaluation. Second author spelling: B. Rohani.
+- LLM-Evaluation (University of Amsterdam, Prof. M. Aliannejadi): code link https://github.com/AAhmadS/LLM-Evaluation.
+- Lightning Network code link: https://github.com/incentivus/Lightning-Network-Centralization (the Work CV link; the old AAhmadS URL redirects to it).
+
+### Education
+- Final GPA 17.22/20 supersedes 17.38. The 134-unit figure and the 16.86 / 16.17 averages belonged to the old GPA and are removed.
+- The Konkur line is included (ranked 95th among more than 50,000 candidates, top 0.2%). This supersedes the older "Never mention Konkur" rule above.
+
+### Rules that stay
+- Never add Chantex, Interval, Trailmark, STEADY, OpenTimeLogger or OpenPointLogger beyond the mentions already on the site.
+- Never list iPrOp, OpenCHA or OrTOS. Never write "Asr-kherad".
+- Name no Wisdom Era client other than ModAI.
+- No metric that is not in the sources. Never say or imply the code was written with AI coding agents.
+- Modest tone: never "specialist", "specializing" or "advanced".
+
+### Superseded by this update
+- "Never mention Konkur".
+- "Kolbeh ... Founder ... (failed)", Liara hosting, 18 controllers, MAPE, CatBoost/XGBoost/LightGBM model names, CRM-Mini, consultant dashboard.
+- Hambast as a "Fin-AI company" with First-Agent and Invoice-OCR.
+- "THREE experiences only: Yara, Kolbeh, Wisdom-Era" and "Never name ... Baghboon".
+- GPA 17.38 over 134 units (department 16.86, university 16.17).
+- Yara "prompt-optimization, LangServe" wording.

@@ -22,7 +22,7 @@ export const gaps: AuditEntry[] = [
     period: '2024',
     gap: 'Published papers, could not deploy anything.',
     plan: 'Build full-stack: backend, frontend, pricing models, auth — the whole boring stack.',
-    evidence: 'Kolbeh platform (18 controllers, ML pricer, two frontends). It later failed — but the capability stayed.',
+    evidence: 'Kolbeh (AI real-estate startup, closed January 2026): engineering team, valuation engine and its data crawling, client web application and landing pages.',
   },
   {
     period: '2025',
@@ -56,7 +56,7 @@ export const powers: { domain: string; then: string; now: string }[] = [
   {
     domain: 'Shipping software',
     then: 'Jupyter notebooks.',
-    now: 'Failed startup (full platform), private company (Chantex), Fin-AI company (Hambast).',
+    now: 'Closed startup (Kolbeh), private company (Chantex), accounting automation (Hambast, at Wisdom Era).',
   },
 ];
 

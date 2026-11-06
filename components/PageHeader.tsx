@@ -1,21 +1,21 @@
+import type { ReactNode } from 'react';
+
 interface PageHeaderProps {
-  eyebrow: string;
-  title: React.ReactNode;
-  subtitle?: string;
+  /** Optional quiet label above the title (sentence case, UI font). Rendered only when given. */
+  eyebrow?: string;
+  /** Rendered as the page's single <h1>. */
+  title: ReactNode;
+  /** Muted standfirst, max 42rem. */
+  subtitle?: ReactNode;
 }
 
+/** Page opening: optional eyebrow, the h1, and an optional subtitle inside the 68rem container. */
 export function PageHeader({ eyebrow, title, subtitle }: PageHeaderProps) {
   return (
-    <div className="pt-32 pb-12">
-      <div className="mx-auto max-w-[1160px] px-6">
-        <span className="section-label">{eyebrow}</span>
-        <h1 className="mt-3 font-display text-4xl font-bold md:text-5xl">{title}</h1>
-        {subtitle && (
-          <p className="mt-4 max-w-2xl text-lg" style={{ color: 'var(--text-secondary)' }}>
-            {subtitle}
-          </p>
-        )}
-      </div>
-    </div>
+    <header className="page-header container-site">
+      {eyebrow && <p className="meta mb-3">{eyebrow}</p>}
+      <h1>{title}</h1>
+      {subtitle && <p className="lede">{subtitle}</p>}
+    </header>
   );
 }

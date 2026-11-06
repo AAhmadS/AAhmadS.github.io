@@ -1,20 +1,31 @@
-export interface HambastProduct {
+export interface HambastInfo {
   name: string;
   line: string;
-  detail: string;
+  period: string;
+  summary: string;
+  capabilities: string[];
+  tools: string[];
+  firstCase: string;
+  links: { label: string; href: string }[];
 }
 
-export const hambastProducts: HambastProduct[] = [
-  {
-    name: 'First-Agent',
-    line: 'Persian auto-accounting',
-    detail:
-      'Web app (Vue 3 + FastAPI + Mistral) with admin gating: bookkeeping flows, VAT handling, and model-assisted entry — built against real ledgers.',
-  },
-  {
-    name: 'Invoice-OCR',
-    line: 'Invoice photos → structured data',
-    detail:
-      'Agentic vision pipeline: Persian invoice photos through vision-language models into a checked-in invoice schema, exported as JSON and XLSX.',
-  },
-];
+export const hambast: HambastInfo = {
+  name: 'Hambast',
+  line: 'Accounting automation',
+  period: 'Jul 2026 – present',
+  summary:
+    'A Persian-language accounting platform centered on agentic workflow automation, developed within Wisdom Era.',
+  capabilities: [
+    'Bookkeeping',
+    'VAT compliance',
+    'AI-assisted journal entries',
+    'Role-based access control',
+  ],
+  tools: ['Vue 3', 'FastAPI', 'LangGraph'],
+  firstCase:
+    'Deployed on its first live case, the company accounting of **[ModAI](https://modai.fashion)**.',
+  links: [
+    { label: 'Hambast', href: 'https://hambast.ir' },
+    { label: 'Wisdom Era', href: 'https://www.wisdomera.net/' },
+  ],
+};

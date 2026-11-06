@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useTheme } from '@/lib/theme';
-import { FiMoon, FiSun } from 'react-icons/fi';
+import { FiMenu, FiMoon, FiSun, FiX } from 'react-icons/fi';
 
 const links = [
   { href: '/', label: 'Home' },
@@ -22,80 +22,84 @@ const links = [
 export function Nav() {
   const { theme, toggle } = useTheme();
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+  // The menu is open only for the path it was opened on, so a route change closes it without an effect.
+  const [openPath, setOpenPath] = useState<string | null>(null);
+  const open = openPath === pathname;
+  const menuButton = useRef<HTMLButtonElement>(null);
 
   const isActive = (href: string) =>
-    href === '/' ? pathname === '/' : pathname.startsWith(href);
+    href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`);
+
+  function onKeyDown(e: React.KeyboardEvent<HTMLElement>) {
+    if (e.key === 'Escape' && open) {
+      setOpenPath(null);
+      menuButton.current?.focus();
+    }
+  }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[1000] border-b backdrop-blur-xl"
-      style={{ background: 'var(--nav-bg)', borderColor: 'var(--surface-border)' }}>
-      <div className="mx-auto flex h-[68px] max-w-[1160px] items-center justify-between px-6">
-        <Link
-          href="/"
-          className="font-display text-2xl font-bold tracking-tight gradient-text"
-          aria-label="Amirahmad Shafiee - Home"
-        >
-          AS
+    <header className="site-header" onKeyDown={onKeyDown}>
+      <div className="container-site site-header__bar">
+        <Link href="/" className="wordmark" aria-label="Amirahmad Shafiee, home">
+          Amirahmad Shafiee
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
+        <nav className="hidden items-stretch gap-5 nav:flex" aria-label="Main navigation">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className={`text-sm font-medium transition-colors ${isActive(l.href) ? '' : ''}`}
-              style={{ color: isActive(l.href) ? 'var(--text-primary)' : 'var(--text-secondary)' }}
+              className="nav-link"
+              aria-current={isActive(l.href) ? 'page' : undefined}
             >
               {l.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <button
+            type="button"
             onClick={toggle}
-            aria-label="Toggle dark/light mode"
-            className="flex h-11 w-11 items-center justify-center rounded-xl border text-lg transition-all"
-            style={{
-              background: 'var(--surface)',
-              borderColor: 'var(--surface-border)',
-              color: 'var(--text-secondary)',
-            }}
+            aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+            className="icon-btn theme-toggle"
           >
-            {theme === 'dark' ? <FiMoon /> : <FiSun />}
+            {theme === 'dark' ? <FiSun aria-hidden="true" size={18} /> : <FiMoon aria-hidden="true" size={18} />}
           </button>
 
           <button
-            onClick={() => setOpen((o) => !o)}
-            aria-label="Open mobile menu"
+            ref={menuButton}
+            type="button"
+            onClick={() => setOpenPath(open ? null : pathname)}
             aria-expanded={open}
-            className="flex h-11 w-11 flex-col items-center justify-center gap-[5px] rounded-xl border md:hidden"
-            style={{ background: 'var(--surface)', borderColor: 'var(--surface-border)' }}
+            aria-controls="site-menu"
+            className="icon-btn menu-btn nav:hidden"
           >
-            <span className="block h-[2px] w-5 rounded" style={{ background: 'var(--text-secondary)' }} />
-            <span className="block h-[2px] w-5 rounded" style={{ background: 'var(--text-secondary)' }} />
-            <span className="block h-[2px] w-5 rounded" style={{ background: 'var(--text-secondary)' }} />
+            <span>Menu</span>
+            {open ? <FiX aria-hidden="true" size={18} /> : <FiMenu aria-hidden="true" size={18} />}
           </button>
         </div>
       </div>
 
-      {open && (
-        <div className="flex flex-col gap-1 border-t px-6 py-4 md:hidden"
-          style={{ background: 'var(--nav-bg)', borderColor: 'var(--surface-border)' }}>
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="py-3 text-lg font-medium"
-              style={{ color: 'var(--text-secondary)' }}
-            >
-              {l.label}
-            </Link>
-          ))}
-        </div>
-      )}
+      {/* Always in the DOM (hidden attribute) so aria-controls resolves and a no-JS fallback can reveal it. */}
+      <div id="site-menu" className="site-menu nav:hidden" hidden={!open}>
+        <nav className="container-site" aria-label="Main navigation">
+          <ul role="list" className="m-0 list-none p-0">
+            {links.map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="menu-link"
+                  aria-current={isActive(l.href) ? 'page' : undefined}
+                  onClick={() => setOpenPath(null)}
+                >
+                  <span>{l.label}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 }

@@ -1,5 +1,7 @@
+import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
 import { PageHeader } from '@/components/PageHeader';
+import { Status } from '@/components/Status';
 import { chantexProducts } from '@/content/chantex';
 
 export const metadata: Metadata = {
@@ -8,44 +10,48 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://aahmads.github.io/chantex/' },
 };
 
+// main | aside: the Ledger's two columns without a year column. Written out here (not <Ledger>) so each product
+// name stays an h2 under the page's h1, exactly as it was.
+const COLS = { '--ledger-cols': 'minmax(0, 1fr) auto' } as CSSProperties;
+
 export default function ChantexPage() {
   return (
-    <div className="pb-24">
+    <>
       <PageHeader
         eyebrow="// chantex — private"
-        title={<>Chan<span className="gradient-text">tex</span></>}
+        title="Chantex"
         subtitle="My private company. Three products live below. Methods undisclosed."
       />
 
-      <div className="mx-auto max-w-[1160px] px-6">
-        <div className="glass-card p-8">
-          <p className="max-w-3xl font-mono text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+      <div className="container-site">
+        <div className="section-body pt-0">
+          <p className="max-w-measure font-mono text-[0.9375rem] leading-relaxed text-muted">
             {"// Chantex builds private software. What it makes:"}
           </p>
-          <div className="mt-8 flex flex-col gap-5">
+
+          <ul role="list" className="ledger mt-6 border-t border-line" style={COLS}>
             {chantexProducts.map((p) => (
-              <div
-                key={p.name}
-                className="flex flex-wrap items-baseline justify-between gap-3 rounded-xl border p-6"
-                style={{ borderColor: 'var(--surface-border)', background: 'var(--surface)' }}
-              >
-                <div>
-                  <h2 className="font-display text-xl font-bold">
-                    {p.name} <span className="font-mono text-xs font-normal" style={{ color: 'var(--text-tertiary)' }}>· {p.codename}</span>
+              <li key={p.name} className="ledger-row">
+                <div className="ledger-main">
+                  <h2 className="ledger-title text-2xl leading-tight">
+                    {p.name} <span className="meta font-normal">· {p.codename}</span>
                   </h2>
-                  <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>{p.line}</p>
+                  <p className="ledger-summary">{p.line}</p>
                 </div>
-                <span className="tag shrink-0">Private</span>
-              </div>
+                <div className="ledger-aside md:pt-1.5">
+                  <Status tone="neutral" label="Private" />
+                </div>
+              </li>
             ))}
-          </div>
-          <p className="mt-8 max-w-3xl font-mono text-sm leading-relaxed" style={{ color: 'var(--text-tertiary)' }}>
+          </ul>
+
+          <p className="mt-8 max-w-measure font-mono text-[0.875rem] leading-relaxed text-faint">
             {"// No repos. No demos. No roadmaps published."}
             <br />
             {"// Inquiries: shafieeamirahmadii@gmail.com"}
           </p>
         </div>
       </div>
-    </div>
+    </>
   );
 }

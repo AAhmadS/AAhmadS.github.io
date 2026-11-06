@@ -1,8 +1,28 @@
 import type { Metadata } from 'next';
+import localFont from 'next/font/local';
 import './globals.css';
 import { ThemeProvider } from '@/lib/theme';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
+
+// Self-hosted variable fonts (OFL, licences in app/fonts). Latin subset; Persian runs use a system face.
+const serif = localFont({
+  src: './fonts/source-serif-4-latin-wght-normal.woff2',
+  weight: '200 900',
+  style: 'normal',
+  display: 'swap',
+  variable: '--font-serif',
+  adjustFontFallback: 'Times New Roman',
+});
+
+const ui = localFont({
+  src: './fonts/space-grotesk-latin-wght-normal.woff2',
+  weight: '300 700',
+  style: 'normal',
+  display: 'swap',
+  variable: '--font-ui',
+  adjustFontFallback: 'Arial',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://aahmads.github.io'),
@@ -11,7 +31,7 @@ export const metadata: Metadata = {
     template: '%s | Amirahmad Shafiee',
   },
   description:
-    'Amirahmad Shafiee — AI Researcher & Builder, CS at Sharif University of Technology. NLP, Persian LLM/Voice, Vision-Language Models, RL. Papers (SDPERL, Lightning Network RL, Emo3D), Kolbeh real-estate AI platform, voice agents, open tools.',
+    'Amirahmad Shafiee — AI Researcher & Builder, computer science graduate of Sharif University of Technology. Multi-agent systems, RAG, voice agents, LLM evaluation. Papers (Lightning Network RL, Emo3D, SDPERL, From Illusion to Insight), Carinx, Hambast at Wisdom Era, open tools.',
   keywords: [
     'Amirahmad Shafiee',
     'Sharif University',
@@ -23,7 +43,9 @@ export const metadata: Metadata = {
     'Reinforcement Learning',
     'Lightning Network',
     'Software Defect Prediction',
-    'Kolbeh',
+    'Multi-agent systems',
+    'RAG',
+    'LLM evaluation',
   ],
   authors: [{ name: 'Amirahmad Shafiee', url: 'https://aahmads.github.io' }],
   creator: 'Amirahmad Shafiee',
@@ -33,19 +55,15 @@ export const metadata: Metadata = {
     url: 'https://aahmads.github.io',
     siteName: 'Amirahmad Shafiee',
     title: 'Amirahmad Shafiee — AI Researcher & Builder',
-    description:
-      'NLP, Persian voice/agents, VLM, RL. Papers, Kolbeh AI platform, audits, open tools.',
+    description: 'NLP, Persian voice agents, VLM, RL. Papers, Carinx, Hambast at Wisdom Era, audits, open tools.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Amirahmad Shafiee — AI Researcher & Builder',
-    description:
-      'NLP, Persian voice/agents, VLM, RL. Papers, Kolbeh AI platform, audits, open tools.',
+    description: 'NLP, Persian voice agents, VLM, RL. Papers, Carinx, Hambast at Wisdom Era, audits, open tools.',
   },
   robots: { index: true, follow: true },
-  icons: {
-    icon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>',
-  },
+  // favicon: app/icon.svg (file convention)
 };
 
 const jsonLd = {
@@ -64,29 +82,39 @@ const jsonLd = {
   ],
 };
 
+// Runs before first paint: dark is the default, `light` is added only when the visitor chose it.
+const themeScript = `try{var t=localStorage.getItem('theme');document.documentElement.classList.toggle('light',t==='light')}catch(e){}`;
+
+// Without JavaScript the Menu button cannot work, so show the link list instead.
+const noscriptCss =
+  '@media (max-width:69.99rem){.site-menu[hidden]{display:block!important}.menu-btn{display:none!important}}';
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${serif.variable} ${ui.variable}`} suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <noscript>
+          <style>{noscriptCss}</style>
+        </noscript>
       </head>
-      <body className="font-body">
+      <body>
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <ThemeProvider>
           <Nav />
-          <main className="min-h-screen">{children}</main>
+          <main id="main" tabIndex={-1} className="flex-1">
+            {children}
+          </main>
           <Footer />
         </ThemeProvider>
       </body>

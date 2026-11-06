@@ -1,4 +1,8 @@
 /** @type {import('tailwindcss').Config} */
+// Design system: "Scholar's dossier on ink". Every colour is a CSS variable defined in app/globals.css
+// (dark = :root default, light = html.light), so theme switching never needs a `dark:` variant.
+// Class names: bg-bg, bg-surface, text-fg, text-muted, text-faint, border-line, border-line-strong,
+// text-accent, bg-accent, text-accent-on, hover:text-accent-hover, ring/outline-focus.
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,37 +11,46 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      screens: {
+        // Ten nav links need about 1000px of bar width, measured in a browser; below this the Menu button is shown.
+        nav: '70rem',
+      },
       colors: {
-        ink: {
-          DEFAULT: '#0b1020',
-          light: '#151b31',
-        },
+        bg: 'var(--bg)',
         surface: {
-          DEFAULT: 'rgba(255,255,255,.05)',
-          hover: 'rgba(255,255,255,.08)',
-          border: 'rgba(255,255,255,.12)',
-          'border-hover': 'rgba(255,255,255,.2)',
+          DEFAULT: 'var(--surface)',
         },
-        brand: {
-          500: '#6366f1',
-          600: '#8b5cf6',
-          start: '#6366f1',
-          end: '#8b5cf6',
+        line: {
+          DEFAULT: 'var(--line)', // decorative hairlines
+          strong: 'var(--line-strong)', // UI boundaries (inputs, outlined buttons), >= 3:1
         },
-        warm: {
-          amber: '#f59e0b',
-          coral: '#fb7185',
+        fg: 'var(--text)',
+        muted: 'var(--text-muted)',
+        faint: 'var(--text-faint)',
+        accent: {
+          DEFAULT: 'var(--accent)',
+          hover: 'var(--accent-hover)',
+          on: 'var(--on-accent)',
         },
+        focus: 'var(--focus)',
       },
       fontFamily: {
-        display: ['"Space Grotesk"', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
+        serif: ['var(--ff-serif)'],
+        ui: ['var(--ff-ui)'],
+        sans: ['var(--ff-ui)'],
+        mono: ['var(--ff-mono)'], // system monospace; only for code-like strings
       },
-      backgroundImage: {
-        'brand-gradient': 'linear-gradient(135deg, #6366f1, #8b5cf6)',
-        'brand-gradient-text': 'linear-gradient(135deg, #818cf8, #a78bfa, #c4b5fd)',
-        'warm-gradient': 'linear-gradient(135deg, #f59e0b, #fb7185)',
+      maxWidth: {
+        site: '68rem', // page container
+        measure: '42rem', // reading column (about 68ch)
+      },
+      transitionTimingFunction: {
+        out: 'var(--ease-out)',
+      },
+      transitionDuration: {
+        fast: '120ms',
+        base: '160ms',
+        slow: '200ms',
       },
     },
   },

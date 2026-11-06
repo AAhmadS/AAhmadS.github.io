@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import { Prose } from '@/components/Prose';
+import { SmartLink } from '@/components/SmartLink';
 import { regrets, getRegret } from '@/content/regrets';
 
 export function generateStaticParams() {
@@ -23,73 +25,80 @@ export async function generateMetadata({
   };
 }
 
+const BACK_LINK =
+  'inline-flex min-h-[44px] items-center gap-2 font-ui text-[0.9375rem] font-medium text-muted transition-colors duration-fast ease-out [@media(hover:hover)]:hover:text-fg';
+
+// Project names run to ~60 characters, so the detail h1 is a step below the index-page h1.
+const DETAIL_TITLE = 'mt-2 max-w-4xl text-3xl/[1.12] sm:text-4xl/[1.12] lg:text-5xl/[1.12]';
+
+// Small sentence-case labels for the side blocks and the pull block.
+const LABEL = 'font-ui text-[0.9375rem] font-medium leading-snug tracking-normal text-muted';
+
+const LINK = 'link-accent inline-flex min-h-[44px] items-center font-ui text-[0.9375rem] font-medium';
+
 export default function RegretDetailPage({ params }: { params: { slug: string } }) {
   const regret = getRegret(params.slug);
   if (!regret) notFound();
 
   return (
-    <div className="pb-24">
-      <div className="mx-auto max-w-[1160px] px-6 pt-32">
-        <Link href="/regrets" className="font-mono text-sm" style={{ color: 'var(--text-secondary)' }}>
-          ← All regrets
+    <article>
+      <header className="page-header container-site">
+        <Link href="/regrets/" className={BACK_LINK}>
+          <span aria-hidden="true">←</span> All regrets
         </Link>
-        <div className="mt-6">
-          <span className="tag">{regret.period}</span>
-        </div>
-        <h1 className="mt-4 max-w-4xl font-display text-4xl font-bold leading-tight md:text-5xl">
-          {regret.project}
-        </h1>
-        <p className="mt-3 max-w-3xl font-mono text-sm" style={{ color: 'var(--brand-start)' }}>
-          {regret.tagline}
-        </p>
+        <p className="meta mt-6">{regret.period}</p>
+        <h1 className={DETAIL_TITLE}>{regret.project}</h1>
+        <p className="meta mt-4 max-w-measure text-base">{regret.tagline}</p>
+      </header>
 
-        <div className="mt-10 grid gap-8 md:grid-cols-[1fr_280px]">
-          <div className="flex flex-col gap-6">
-            <div className="glass-card space-y-4 p-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+      <div className="container-site">
+        <div className="section-body section-body--rule grid gap-12 lg:grid-cols-[minmax(0,42rem)_minmax(0,18rem)] lg:justify-between lg:gap-x-12">
+          <div className="min-w-0">
+            <Prose>
               {regret.story.map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
-            </div>
+            </Prose>
 
-            <div
-              className="rounded-xl border p-7"
-              style={{ borderColor: 'var(--surface-border)', background: 'rgba(245,158,11,.06)' }}
-            >
-              <div className="section-label">What I regret</div>
-              <p className="mt-3 font-display text-lg font-semibold leading-relaxed">{regret.regret}</p>
-            </div>
+            <section aria-labelledby="regret-heading" className="mt-12 max-w-measure border-l-[3px] border-accent pl-5 md:pl-6">
+              <h2 id="regret-heading" className={LABEL}>
+                What I regret
+              </h2>
+              <p className="mt-2 text-[1.25rem] leading-[1.55] text-fg">{regret.regret}</p>
+            </section>
           </div>
 
-          <div className="flex h-fit flex-col gap-6">
-            <div className="glass-card p-6">
-              <h2 className="font-display text-lg font-bold">Capabilities gained</h2>
-              <div className="mt-4 flex flex-wrap gap-2">
+          <div className="min-w-0 space-y-10">
+            <section aria-labelledby="capabilities-heading" className="border-t border-line pt-4">
+              <h2 id="capabilities-heading" className={LABEL}>
+                Capabilities gained
+              </h2>
+              <ul className="mt-3 list-disc space-y-2 ps-5 text-[0.9375rem] leading-snug marker:text-faint">
                 {regret.capabilities.map((c) => (
-                  <span key={c} className="tag">{c}</span>
+                  <li key={c}>{c}</li>
                 ))}
-              </div>
-            </div>
+              </ul>
+            </section>
 
             {regret.related.length > 0 && (
-              <div className="glass-card p-6">
-                <h2 className="font-display text-lg font-bold">Related</h2>
-                <div className="mt-4 flex flex-col gap-3">
+              <section aria-labelledby="related-heading" className="border-t border-line pt-4">
+                <h2 id="related-heading" className={LABEL}>
+                  Related
+                </h2>
+                <ul role="list" className="mt-1">
                   {regret.related.map((l) => (
-                    <Link
-                      key={l.label}
-                      href={l.href}
-                      className="rounded-lg border px-4 py-2.5 text-center font-mono text-sm transition-colors"
-                      style={{ borderColor: 'var(--surface-border)', color: 'var(--text-secondary)' }}
-                    >
-                      {l.label}
-                    </Link>
+                    <li key={`${l.label}|${l.href}`}>
+                      <SmartLink href={l.href} className={LINK}>
+                        {l.label}
+                      </SmartLink>
+                    </li>
                   ))}
-                </div>
-              </div>
+                </ul>
+              </section>
             )}
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

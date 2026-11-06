@@ -3,17 +3,17 @@ import type { Project } from '@/lib/types';
 export const projects: Project[] = [
   {
     slug: 'kolbeh-platform',
-    title: 'Kolbeh — AI Real-Estate Platform',
-    badge: 'Venture · Shut down Jan 2026',
+    title: 'Kolbeh — AI Real-Estate Startup',
+    badge: 'Startup · Closed Jan 2026',
     summary:
-      'My startup attempt (2025–Jan 2026): full-stack property platform (mykolbeh.com) with C# ASP.NET OTP/JWT backend, ML pricer (MAPE ~0.15), Next.js client, and Nuxt landing. It failed — documented here honestly.',
+      'An AI-powered property marketplace and valuation platform (Mar 2025 – Jan 2026), closed in January 2026. I built its engineering team and led product development as Director of Technology, after starting as Product Manager and Data Scientist.',
     description:
-      'My startup attempt, now finished. Backend: ASP.NET Core 8 + EF/Postgres + Redis + SignalR — 18 controllers covering OTP/JWT users, SmartRealEstatePricing (incl. V2 background jobs), estate delegation, ads, wishlist, location, blog. AI pricer: FastAPI service (CatBoost/XGBoost/LightGBM) fed by property crawlers, calling back into the pricing API. Frontends: Next.js client (Orval-generated API layer) and a Nuxt SEO landing, deployed on Liara. The venture did not survive — it shut down in January 2026 — but the engineering (auth, pricing pipeline, bilingual product) feeds everything I build since.',
-    tech: ['C#', 'ASP.NET Core', 'Postgres', 'Next.js', 'Nuxt', 'FastAPI', 'CatBoost'],
-    links: [{ label: 'Website', href: 'https://mykolbeh.com' }],
-    year: '2025–Jan 2026',
+      'Kolbeh was an AI real-estate startup building a property marketplace and valuation platform. I joined in March 2025 as Product Manager and Data Scientist and became Director of Technology in July 2025. I built the engineering team from the ground up and led product development. I managed development of the automated property valuation engine and developed its data crawling, which collected the market listings its pricing models were trained on. I also managed full-stack development across the core backend, the client web application and the acquisition landing pages. The company closed in January 2026.',
+    tech: ['ASP.NET Core', 'Next.js', 'Nuxt'],
+    links: [],
+    year: 'Mar 2025 – Jan 2026',
     kind: 'venture',
-    status: 'Shut down · failed startup',
+    status: 'Closed January 2026',
   },
   {
     slug: 'foreign-word-detector',
@@ -57,7 +57,7 @@ export const projects: Project[] = [
       'Implementation behind the Lightning-Network-RL paper (arXiv:2411.17353): Gym-style environment with improved LN routing, PPO/A2C baselines plus the attention-based agent, NetworkX graph analysis and TensorBoard logging. See the Research page for the paper.',
     tech: ['Python', 'PyTorch', 'Stable-Baselines3', 'NetworkX'],
     links: [
-      { label: 'GitHub', href: 'https://github.com/AAhmadS/Lightning-Network-Centralization' },
+      { label: 'GitHub', href: 'https://github.com/incentivus/Lightning-Network-Centralization' },
     ],
     year: '2024',
     kind: 'research',
@@ -94,32 +94,21 @@ export const projects: Project[] = [
     status: 'Active',
   },
   {
-    slug: 'crm-mini',
-    title: 'CRM-Mini — AI Real-Estate CRM',
-    badge: 'Venture',
-    summary:
-      'Multi-channel (Telegram/WhatsApp/SMS) real-estate CRM: FastAPI + LangGraph/Mistral agents, Postgres/Redis/Elastic, React dashboard, Persian templates.',
-    description:
-      'Phase-2-hardened AI CRM for property sales: LangGraph agents on Mistral handle multi-channel follow-ups (Telegram MTProto DMs, WhatsApp, SMS) with Persian templates, over FastAPI + SQLAlchemy/Alembic with Postgres, Redis, and Elastic. React dashboard for agents. Dockerized.',
-    tech: ['FastAPI', 'LangGraph', 'Mistral', 'Postgres', 'React'],
-    links: [],
-    year: '2025',
-    kind: 'venture',
-    status: 'Phase 2',
-  },
-  {
     slug: 'finai-accounting',
-    title: 'Hambast — Auto-Accounting + Invoice OCR',
-    badge: 'Hambast · Wisdom-Era',
+    title: 'Hambast — Accounting Automation',
+    badge: 'Hambast · Wisdom Era',
     summary:
-      'Hambast company product: Persian auto-accounting (Vue + FastAPI + Mistral) plus an agentic vision-OCR pipeline turning invoice photos into JSON/XLSX.',
+      'A Persian-language accounting platform centered on agentic workflow automation: bookkeeping, VAT compliance, AI-assisted journal entries and role-based access control. First live case: the company accounting of **[ModAI](https://modai.fashion)**.',
     description:
-      'Two halves of the Hambast Fin-AI company: First-Agent, an auto-accounting web app (Vue 3 + FastAPI + Mistral) with admin gating; and Invoice-OCR, a LangGraph vision pipeline where Persian invoice photos go through vision-language models into structured JSON and XLSX with a checked-in invoice schema. Built for real bookkeeping pain, not demos. See the Hambast tab for the company.',
-    tech: ['FastAPI', 'Vue 3', 'LangGraph', 'Mistral'],
-    links: [],
-    year: '2025–2026',
+      'Hambast is a Persian-language accounting platform centered on agentic workflow automation, developed within Wisdom Era since July 2026. It handles bookkeeping, VAT compliance, AI-assisted journal entries and role-based access control, and is built with Vue 3, FastAPI and LangGraph. It was deployed on its first live case, the company accounting of **[ModAI](https://modai.fashion)**.',
+    tech: ['Vue 3', 'FastAPI', 'LangGraph'],
+    links: [
+      { label: 'Hambast', href: 'https://hambast.ir' },
+      { label: 'Wisdom Era', href: 'https://www.wisdomera.net/' },
+    ],
+    year: 'Jul 2026 – present',
     kind: 'venture',
-    status: 'Becoming Hambast',
+    status: 'Active',
   },
 ];
 

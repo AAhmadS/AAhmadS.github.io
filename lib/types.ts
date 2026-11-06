@@ -25,6 +25,8 @@ export interface Paper {
   group?: 'published' | 'under-review' | 'unfinished' | 'ongoing';
   summary: string;
   abstract: string;
+  /** What Amirahmad did on this paper, from the CV. */
+  role?: string;
   links: PaperLink[];
 }
 

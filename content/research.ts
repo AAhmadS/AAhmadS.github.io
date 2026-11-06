@@ -12,9 +12,11 @@ export const papers: Paper[] = [
     summary:
       'File-level software defect prediction combining ensemble feature extraction (five code-specific pre-trained models) with PPO reinforcement-learning feature selection. +6.25% average F1 over baselines on PROMISE.',
     abstract:
-      'We propose SDPERL, a framework for file-level software defect prediction that combines ensemble feature extraction with reinforcement-learning-based feature selection. Semantic and structural features are extracted with five code-specific pre-trained models; selection runs in a custom embedding space with an Ant-Colony-inspired pheromone table guiding a PPO agent to the most predictive features. Evaluated on the PROMISE dataset, it improves average F1-Score by 6.25% over traditional methods and baselines. With M. Hesamolhokama, M. Ahmaditeshnizi, M. Fazli, J. Habibi. 14 pages, arXiv:2412.07927.',
+      'We propose SDPERL, a framework for file-level software defect prediction that combines ensemble feature extraction with reinforcement-learning-based feature selection. Semantic and structural features are extracted with five code-specific pre-trained models; selection runs in a custom embedding space with an Ant-Colony-inspired pheromone table guiding a PPO agent to the most predictive features. Evaluated on the PROMISE dataset, it improves average F1-Score by 6.25% over traditional methods and baselines. With M. Hesamolhokama, M. Ahmaditeshnizi, M. Fazli, J. Habibi. 14 pages, arXiv:2412.07927. Equal contribution with M. Ahmaditeshnizi.',
+    role: 'Architected the end-to-end pipeline, statistical feature embeddings, metaheuristic search, RL environment and reward formulation, and Transformer-based PPO agent; executed extensive baseline benchmarks and high-dimensional statistical analyses.',
     links: [
       { label: 'arXiv', href: 'https://arxiv.org/abs/2412.07927' },
+      { label: 'Code', href: 'https://github.com/mhhokama/software-defect-prediction-rl' },
       {
         label: 'Scholar',
         href: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=bmO8gCYAAAAJ&citation_for_view=bmO8gCYAAAAJ:zYLM7Y9cAGgC',
@@ -27,15 +29,17 @@ export const papers: Paper[] = [
       'Aligning Incentives and Resilience: Joint Node Selection and Resource Allocation in the Lightning Network',
     year: '2026',
     meta: '2 citations · equal contribution',
-    venue: 'J. Royal Statistical Society Series A',
+    venue: 'J. Royal Statistical Society Series A, 189(2), 2026, pp. 744–767',
     group: 'published',
     summary:
       'Journal version of the JCNSRA work: transformer-enhanced deep RL for joint node selection + channel funding in Bitcoin\u2019s Lightning Network, with a more realistic routing simulation. Revenue incentives align with decentralization.',
     abstract:
-      'Joining the Lightning Network for profit means solving a joint combinatorial problem: discrete node selection plus continuous resource allocation. We build a transformer-enhanced deep RL framework for this JCNSRA problem on an improved LN environment with a more realistic routing mechanism, and outperform baselines and heuristics across settings. Deploying the agent and tracking centrality shows no conflict between revenue-maximization incentives and decentralization — rather a positive association. Equal contribution with M. Salahshour, with M. Tefagh. Published in the Journal of the Royal Statistical Society Series A (2026); preprint arXiv:2411.17353. Implementation: Lightning-Network-Centralization repo.',
+      'Joining the Lightning Network for profit means solving a joint combinatorial problem: discrete node selection plus continuous resource allocation. We build a transformer-enhanced deep RL framework for this JCNSRA problem on an improved LN environment with a more realistic routing mechanism, and outperform baselines and heuristics across settings. Deploying the agent and tracking centrality shows no conflict between revenue-maximization incentives and decentralization — rather a positive association. Equal contribution with M. Salahshour, with M. Tefagh. Published in the Journal of the Royal Statistical Society Series A, 189(2), 2026, pp. 744–767; preprint arXiv:2411.17353. Implementation: Lightning-Network-Centralization repo.',
+    role: "Designed and implemented the agent's Transformer decision network and contributed to the simulation environment and GNN baselines.",
     links: [
+      { label: 'Journal (DOI)', href: 'https://doi.org/10.1093/jrsssa/qnag007' },
       { label: 'arXiv preprint', href: 'https://arxiv.org/abs/2411.17353' },
-      { label: 'Code', href: 'https://github.com/AAhmadS/Lightning-Network-Centralization' },
+      { label: 'Code', href: 'https://github.com/incentivus/Lightning-Network-Centralization' },
       {
         label: 'Scholar',
         href: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=bmO8gCYAAAAJ&citation_for_view=bmO8gCYAAAAJ:d1gkVwhDpl0C',
@@ -53,9 +57,11 @@ export const papers: Paper[] = [
     summary:
       'Published at NAACL 2025 Findings (pp. 3158–3172): Text-Image-Expression dataset pairing LLM-generated emotion descriptions with images and 3D blendshapes, plus a new Emo3D metric that beats MSE at judging emotional fidelity.',
     abstract:
-      'Emotion-conditioned 3D faces were bottlenecked by narrow emotion classes and thin datasets. Emo3D contributes a Text-Image-Expression dataset spanning a wide emotion spectrum — LLM-generated descriptions paired with images and 3D blendshapes — benchmarks fine-tuned language models and vision-language models (incl. CLIP) on expression synthesis, and introduces the Emo3D metric, shown superior to MSE for visual-text emotional alignment. Applications in animation, VR, and affective HCI. Equal contribution with M. Dehghani and A. Shafiei; with N. Fallah, F. Alizadeh, M. M. Gholinejad, H. Behroozi, J. Habibi, E. Asgari. Findings of the Association for Computational Linguistics: NAACL 2025, pp. 3158–3172. Preprint arXiv:2410.02049.',
+      'Emotion-conditioned 3D faces were bottlenecked by narrow emotion classes and thin datasets. Emo3D contributes a Text-Image-Expression dataset spanning a wide emotion spectrum — LLM-generated descriptions paired with images and 3D blendshapes — benchmarks fine-tuned language models and vision-language models (incl. CLIP) on expression synthesis, and introduces the Emo3D metric, shown superior to MSE for visual-text emotional alignment. Applications in animation, VR, and affective HCI. Equal contribution with A. Shafiei; with M. Dehghani, N. Fallah, F. Alizadeh, M. M. Gholinejad, H. Behroozi, J. Habibi, E. Asgari. Findings of the Association for Computational Linguistics: NAACL 2025, pp. 3158–3172. Preprint arXiv:2410.02049.',
+    role: 'Proposed and designed the Emotion-XLM model, contributed to dataset curation, and led manuscript writing, revisions, and human evaluation protocols.',
     links: [
       { label: 'arXiv', href: 'https://arxiv.org/abs/2410.02049' },
+      { label: 'ACL Anthology', href: 'https://aclanthology.org/2025.findings-naacl.173' },
       {
         label: 'Scholar',
         href: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=bmO8gCYAAAAJ&citation_for_view=bmO8gCYAAAAJ:Tyk-4Ss8FVUC',
@@ -68,12 +74,13 @@ export const papers: Paper[] = [
       'From Illusion to Insight: Change-Aware File-Level Software Defect Prediction Using Agentic AI',
     year: '2025',
     meta: '2 citations',
-    venue: 'arXiv preprint · under review',
+    venue: 'Journal of Systems and Software · under review after revision',
     group: 'under-review',
     summary:
-      'Follow-up to SDPERL: change-aware file-level defect prediction with agentic AI. With M. Hesamolhokama, B. Rouhani, M. Fazli, J. Habibi.',
+      'Follow-up to SDPERL: change-aware file-level defect prediction with agentic AI. With M. Hesamolhokama, B. Rohani, M. Fazli, J. Habibi.',
     abstract:
-      'Continuing the SDPERL line from static prediction toward agentic methods: change-aware file-level software defect prediction using agentic AI. With M. Hesamolhokama, B. Rouhani, M. Fazli, J. Habibi. Preprint arXiv:2512.23875 (2025). Listed here from my Scholar profile; details to expand once the camera-ready version lands.',
+      'Continuing the SDPERL line from static prediction toward agentic methods: change-aware file-level software defect prediction using agentic AI. With M. Hesamolhokama, B. Rohani, M. Fazli, J. Habibi. Preprint arXiv:2512.23875 (2025). Under review at the Journal of Systems and Software, after revision.',
+    role: 'Formulated core research questions analyzing where agentic AI succeeds and fails in defect prediction, and built an asynchronous framework for agent deployment and inference, integrating commercial LLM APIs and local models.',
     links: [{ label: 'arXiv', href: 'https://arxiv.org/abs/2512.23875' }],
   },
   {
@@ -113,7 +120,7 @@ export const papers: Paper[] = [
       'Definement-vs-scoring study of LLM judges (GPT-4o/mini, LLaMA-3.3-70B, Qwen2.5-32B, Mixtral-8x22B) on USR, SummEval, SumPubMed, and HelpSteer2.',
     abstract:
       'We compare ways of asking LLMs to evaluate generated text — definement versus direct scoring — across summarization and alignment benchmarks (USR, SummEval, SumPubMed, HelpSteer2) with a panel of open and closed judges. Started under supervision of Prof. M. Aliannejadi (University of Amsterdam) as an analytical study of LLM evaluators: quality, biases, reliability. Work in progress; findings feed the Domains notes on evaluation methodology. No public preprint yet.',
-    links: [],
+    links: [{ label: 'Code', href: 'https://github.com/AAhmadS/LLM-Evaluation' }],
   },
 ];
 

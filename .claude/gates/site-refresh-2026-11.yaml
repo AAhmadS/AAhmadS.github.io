@@ -1,0 +1,116 @@
+# Gate file for slice site-refresh-2026-11 (front-end: design pass and content refresh).
+# Gates travel in files, not prose. Paths below are relative to the repository root.
+
+slice: site-refresh-2026-11
+repo: C:\Users\USER\.vscode\AAhmadS.github.io
+branch: site-refresh-2026-11   # local branch created from main at cde96a9
+vcs_state: "All changes are uncommitted. Nothing was committed, pushed or deployed."
+raised_by: frontend-lead
+raised_on: 2026-11-05
+content_as_of: 2026-11-04
+
+status_values_note: >
+  `pending_human` is the value the brief asked for. It is not in the stage-gates legend
+  (unmeasured, pass, fail, waived, n/a). It means: recorded, waiting for the founder; it blocks nothing.
+
+gates:
+  - id: G2.5
+    metric: design_direction_accepted
+    threshold: "founder accepts the look"
+    kind: human
+    status: pending_human
+    blocking: false
+    direction: |
+      "Scholar's dossier on ink": a quiet, scannable dossier on the site's own ink-navy ground, with serif reading
+      type (Source Serif 4), Space Grotesk for labels and meta, one amber accent, and hairline ledger rows
+      (year | title and summary | status and links) in place of glass cards and gradients.
+    reasoning: |
+      Readers (admissions committees, professors, hiring managers) skim for work, venue, year and links, so aligned
+      ledgers beat a card grid. The ink navy (#0b1020), the amber and Space Grotesk were already in the site; the
+      indigo-violet gradient and glass-card kit (commonest generic look) is what was dropped.
+    how_to_veto_cheaply: >
+      The whole look is tokens: the :root block (dark, default) and the html.light block in app/globals.css, plus the
+      two font files in app/fonts. Changing the accent, the ground or the fonts there restyles every page at once.
+    accessibility_kept:
+      - "dark default, light theme via the toggle (localStorage key `theme`, no flash on load)"
+      - "skip link, visible focus ring (2px solid, offset 3px) on every interactive element"
+      - "prefers-reduced-motion removes transitions and animations"
+      - "mobile layout at 390 px with no horizontal scroll (measured below)"
+    screenshots:
+      before_1440: .claude/screenshots/site-refresh-2026-11/before/1440/
+      before_390: .claude/screenshots/site-refresh-2026-11/before/390/
+      after_1440: .claude/screenshots/site-refresh-2026-11/after/1440/
+      after_390: .claude/screenshots/site-refresh-2026-11/after/390/
+      after_light_1440: .claude/screenshots/site-refresh-2026-11/after-light/1440/
+      after_light_390: .claude/screenshots/site-refresh-2026-11/after-light/390/
+      after_extra: .claude/screenshots/site-refresh-2026-11/after-extra/
+      tablet_768_after: .claude/screenshots/site-refresh-2026-11/tablet-768/after/
+      tablet_768_before_tablet_fix: .claude/screenshots/site-refresh-2026-11/tablet-768/before-tablet-fix/
+      configured_chat: .claude/screenshots/site-refresh-2026-11/chat-configured/
+      example_pair_home: [".claude/screenshots/site-refresh-2026-11/before/1440/home.png", ".claude/screenshots/site-refresh-2026-11/after/1440/home.png"]
+    screenshot_notes: >
+      before and after hold 33 routes each at 1440 and at 390 (dark theme, the default). after-light holds 14 routes
+      at both widths. tablet-768/before-tablet-fix is the state before the 48rem to 64rem layout fix, kept to show that
+      fix. These folders are git-ignored by their own .gitignore, so they are local evidence only.
+
+# Measured gates (stage 2) for the same slice. Literal numbers only; anything not measured says so.
+measured:
+  - id: G2.1
+    metric: color_contrast
+    threshold: "4.5:1 normal text, 3:1 large text (WCAG 2.1 AA)"
+    kind: deterministic
+    status: pass
+    evidence:
+      - "axe (33 pages x dark and light x 1440 and 390 = 132 page runs, all ok): `TOTAL violating nodes: 0   rules: 0   page-level issues: 0`, exit 0 (.claude/screenshots/site-refresh-2026-11/logs/final2_axe.log)"
+      - "token-pair contrast script: `FAIL/MISSING rows: 0`, exit 0 (.claude/screenshots/site-refresh-2026-11/logs/final2_contrast.log)"
+      - "configured chat state, axe: 0 violations at 1440 and 390 (.claude/screenshots/site-refresh-2026-11/logs/chatstate_final2.log)"
+  - id: G2.2
+    metric: css_bundle_gzipped
+    threshold: "< 50 KB"
+    kind: deterministic
+    status: pass
+    evidence:
+      - "one emitted CSS file: 26176 bytes raw, 6805 bytes gzip level 9 (limit 51200), measured on out/_next/static/css after the final build"
+  - id: G2.3
+    metric: unthemed_css_in_feature_components
+    threshold: "0"
+    kind: deterministic
+    status: fail
+    severity: Low
+    evidence:
+      - "raw hex, rgb() or hsl() in 31 .ts/.tsx files under app/, components/ and lib/: 0"
+      - "px literals in the same files: 10 in code (9 x min-h-[44px] touch-target minimum in five page files, 1 x border-l-[3px] pull-block rule in app/regrets/[slug]/page.tsx) plus 1 mention in a comment in components/Ledger.tsx"
+    note: >
+      Fails the letter of "raw hex or px outside the token layer". The values are a 44px minimum target size and a
+      3px rule, not off-palette colour. A waiver, or converting them to rem or to a named token, is the founder's
+      call; not done here because it would have changed the tree after final verification.
+  - id: G2.4
+    metric: responsive_breakpoints
+    threshold: "desktop >= 1280px, mobile <= 390px; 4px spacing grid"
+    kind: deterministic
+    status: unmeasured
+    evidence:
+      - "rendered 33 routes at 1440 and 33 at 390 (dark): horizontal overflow on 0 of 66 (before the refresh: 4 of 66, all four /domains/<slug>/ pages at 390, scrollWidth 427 vs 390)"
+      - "rendered 14 routes at 1440 and 390 (light): horizontal overflow on 0 of 28"
+      - "13 routes at 768 (tablet): 13 of 13 with 0 offenders"
+      - "console errors on all rendered routes: 0"
+    note: "The 4px spacing-grid part was not measured, so the gate stays unmeasured."
+
+content_open_questions:
+  # Not established from the sources, or sources disagree. The site text was left as it was at HEAD unless noted.
+  - "SDPERL status: Work CV says in preparation (2024); the fact base says submitted to Intelligent Systems with Applications. Site says `arXiv preprint · under review`, unchanged."
+  - "SDPERL authorship note: Work CV marks A. Shafiee and M. Ahmaditeshnizi as equal contribution; a later manuscript cited in the fact base lists M. Hesamolhokama and A. Shafiee. Site follows the Work CV. Needs the owner."
+  - "SLM story-generation (TRL) start date: Work CV says Mar 2025; academic CV and fact base say Jun 2025. The site shows the year 2026 only, no start month."
+  - "MBA: not added (decision pending with the owner)."
+  - "Contact email: unchanged."
+  - "Ownership of Hambast and Carinx (own company versus employer): not established in the sources; no ownership claim was added."
+  - "Roshan-AI dates: site now says Jul 2022 - Oct 2023 (fact base); academic CV says Jul 2021 - Sep 2021."
+  - "X-Bliva: site says 2025, under revision, unfinished; Work CV dates it Nov 2023 - Jul 2024 and the fact base says no longer ongoing."
+  - "Unverified figures left as at HEAD: Scholar `23 citations`, `h-index 2`, per-paper citation counts, `137 tests`, `179 tests`, some technique claims in domain notes and the iResearcher model name."
+  - "hambast.ir currently returns HTTP 404 (hosting error page); the link is kept as asked."
+  - "Footer line `Alibaba had Genie, 2026 Its called AI. I asked for, Genie built, more than 3` is the owner's own text, kept verbatim; the owner should confirm it does not conflict with the rule not to say code was written with AI coding agents."
+
+not_done:
+  - "Independent real-browser QA pass (ui-qa-explorer) was not run: that agent uses the shared Playwright MCP browser, which this slice was told not to use. Handback to qa-lead, non-blocking."
+  - "Not tested: screen reader, Windows high-contrast mode, Firefox, Safari (Chromium only)."
+  - "`npm run lint` skipped: no ESLint config or dependency exists, so `next lint` would prompt for setup."

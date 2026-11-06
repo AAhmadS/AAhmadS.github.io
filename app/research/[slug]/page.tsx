@@ -1,7 +1,12 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import { Prose } from '@/components/Prose';
+import { Rich } from '@/components/Rich';
+import { SmartLink } from '@/components/SmartLink';
+import { Status, type StatusTone } from '@/components/Status';
 import { papers, getPaper } from '@/content/research';
+import type { Paper } from '@/lib/types';
 
 export function generateStaticParams() {
   return papers.map((p) => ({ slug: p.slug }));
@@ -23,56 +28,84 @@ export async function generateMetadata({
   };
 }
 
+const TONE: Record<NonNullable<Paper['group']>, StatusTone> = {
+  published: 'published',
+  'under-review': 'review',
+  ongoing: 'ongoing',
+  unfinished: 'unfinished',
+};
+
+const BACK_LINK =
+  'inline-flex min-h-[44px] items-center gap-2 font-ui text-[0.9375rem] font-medium text-muted transition-colors duration-fast ease-out [@media(hover:hover)]:hover:text-fg';
+
+// Paper titles run to ~110 characters, so the detail h1 is a step below the index-page h1.
+const DETAIL_TITLE = 'mt-5 max-w-4xl text-3xl/[1.12] sm:text-4xl/[1.12] lg:text-5xl/[1.12]';
+
+const LINK =
+  'link-accent inline-flex min-h-[44px] items-center font-ui text-[0.9375rem] font-medium';
+
 export default function PaperDetailPage({ params }: { params: { slug: string } }) {
   const paper = getPaper(params.slug);
   if (!paper) notFound();
 
-  return (
-    <div className="pb-24">
-      <div className="mx-auto max-w-[1160px] px-6 pt-32">
-        <Link href="/research" className="font-mono text-sm" style={{ color: 'var(--text-secondary)' }}>
-          ← All publications
-        </Link>
-        <div className="mt-6 flex flex-wrap items-center gap-3">
-          <span className="tag">{paper.year}</span>
-          <span className="tag" style={{ background: 'rgba(245,158,11,.12)', color: 'var(--warm-amber)' }}>
-            {paper.meta}
-          </span>
-          {paper.venue && <span className="tag">{paper.venue}</span>}
-        </div>
-        <h1 className="mt-6 max-w-4xl font-display text-4xl font-bold leading-tight md:text-5xl">
-          {paper.title}
-        </h1>
+  const tone: StatusTone = paper.group ? TONE[paper.group] : 'neutral';
 
-        <div className="mt-10 grid gap-8 md:grid-cols-[1fr_280px]">
-          <div className="glass-card p-8">
-            <h2 className="font-display text-xl font-bold">Abstract</h2>
-            <p className="mt-4 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              {paper.abstract}
-            </p>
-          </div>
+  return (
+    <article>
+      <header className="page-header container-site">
+        <Link href="/research/" className={BACK_LINK}>
+          <span aria-hidden="true">←</span> All publications
+        </Link>
+
+        <div className="meta mt-6 flex flex-wrap items-center gap-x-5 gap-y-1">
+          <span>{paper.year}</span>
+          {paper.venue && <span>{paper.venue}</span>}
+          <Status tone={tone} label={paper.meta} />
+        </div>
+
+        <h1 className={DETAIL_TITLE}>{paper.title}</h1>
+
+        {paper.role && (
+          <dl className="mt-8 max-w-measure">
+            <dt className="meta font-medium text-fg">Role</dt>
+            <dd className="mt-1 text-muted">
+              <Rich text={paper.role} />
+            </dd>
+          </dl>
+        )}
+      </header>
+
+      <div className="container-site">
+        <div className="section-body section-body--rule grid gap-10 lg:grid-cols-[minmax(0,42rem)_minmax(0,1fr)] lg:gap-16">
+          <section aria-labelledby="abstract-heading">
+            <div className="section-head">
+              <h2 id="abstract-heading">Abstract</h2>
+            </div>
+            <Prose>
+              <p>
+                <Rich text={paper.abstract} />
+              </p>
+            </Prose>
+          </section>
 
           {paper.links.length > 0 && (
-          <div className="glass-card h-fit p-6">
-            <h3 className="font-display text-lg font-bold">Links</h3>
-            <div className="mt-4 flex flex-col gap-3">
-              {paper.links.map((l) => (
-                <a
-                  key={l.label}
-                  href={l.href}
-                  target={l.href.startsWith('http') ? '_blank' : undefined}
-                  rel="noopener noreferrer"
-                  className="rounded-lg border px-4 py-2.5 text-center font-mono text-sm transition-colors"
-                  style={{ borderColor: 'var(--surface-border)', color: 'var(--text-secondary)' }}
-                >
-                  {l.label}
-                </a>
-              ))}
-            </div>
-          </div>
+            <section aria-labelledby="links-heading">
+              <div className="section-head">
+                <h2 id="links-heading">Links</h2>
+              </div>
+              <ul role="list">
+                {paper.links.map((l) => (
+                  <li key={`${l.label}|${l.href}`}>
+                    <SmartLink href={l.href} className={LINK}>
+                      {l.label}
+                    </SmartLink>
+                  </li>
+                ))}
+              </ul>
+            </section>
           )}
         </div>
       </div>
-    </div>
+    </article>
   );
 }
