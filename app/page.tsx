@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { projects } from '@/content/projects';
 import { papers } from '@/content/research';
 import { domains } from '@/content/domains';
-import { regrets } from '@/content/regrets';
 import { chantexProducts } from '@/content/chantex';
 import { Ledger, type LedgerRow } from '@/components/Ledger';
 import { Section } from '@/components/Section';
@@ -96,11 +95,7 @@ const exploreRows: LedgerRow[] = [
     when: 'Honesty',
     title: 'Regrets',
     titleHref: '/regrets',
-    summary: (
-      <>
-        {regrets.length} unfinished projects, what each taught, and the capabilities they left.
-      </>
-    ),
+    summary: <>Unfinished projects, what each taught, and the capabilities they left.</>,
   },
   {
     id: 'chantex',

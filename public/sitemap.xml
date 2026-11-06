@@ -145,24 +145,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aahmads.github.io/regrets/llama-clipvit/</loc>
-    <lastmod>2026-11-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aahmads.github.io/regrets/llm-evaluation/</loc>
-    <lastmod>2026-11-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aahmads.github.io/regrets/persian-multimodal-reasoning/</loc>
-    <lastmod>2026-11-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://aahmads.github.io/chantex/</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
